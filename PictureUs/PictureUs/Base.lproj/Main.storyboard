@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1912" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,54 +15,51 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf7-0s-pjq">
-                                <rect key="frame" x="276" y="70" width="45" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf7-0s-pjq">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Share between twitter or facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-zf-NdB">
-                                <rect key="frame" x="57" y="119" width="500" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFX-ca-qld">
-                                <rect key="frame" x="66" y="262" width="67" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFX-ca-qld">
+                                <frame key="frameInset" minX="66" minY="262" width="67" height="30"/>
                                 <state key="normal" title="Facebook"/>
                                 <connections>
-                                    <action selector="facebookPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XTO-we-PE1"/>
+                                    <action selector="facebookPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Xv-gE-O54"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWP-3n-KYe">
-                                <rect key="frame" x="448" y="262" width="48" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Share between twitter or facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-zf-NdB">
+                                <frame key="frameInset" minX="-63" minY="99" width="500" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM1-0X-MeQ">
+                                <frame key="frameInset" minX="260" minY="262" width="48" height="30"/>
                                 <state key="normal" title="Twitter"/>
                                 <connections>
-                                    <action selector="twitterPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLQ-7J-sp9"/>
+                                    <action selector="twitterPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="koz-In-iH7"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLP-e8-W3T">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mFX-ca-qld" firstAttribute="top" secondItem="EwG-zf-NdB" secondAttribute="bottom" constant="115" id="4Hf-7P-zvU"/>
+                            <constraint firstItem="EwG-zf-NdB" firstAttribute="top" secondItem="gf7-0s-pjq" secondAttribute="bottom" constant="33.5" id="EIY-AG-VAD"/>
+                            <constraint firstItem="vM1-0X-MeQ" firstAttribute="top" secondItem="EwG-zf-NdB" secondAttribute="bottom" constant="115" id="HPa-BB-58B"/>
                             <constraint firstItem="mFX-ca-qld" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="KJQ-mZ-EbT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mWP-3n-KYe" secondAttribute="trailing" constant="85" id="N2d-J2-fhp"/>
+                            <constraint firstItem="gf7-0s-pjq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="ThB-e0-OPK"/>
                             <constraint firstItem="EwG-zf-NdB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VtQ-Bg-KV2"/>
                             <constraint firstItem="gf7-0s-pjq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kf8-bn-W2D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vM1-0X-MeQ" secondAttribute="trailing" constant="51" id="xhl-bV-eye"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="scrollView" destination="NLP-e8-W3T" id="Jm0-ZC-aZh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="399"/>
+            <point key="canvasLocation" x="324" y="398.95052473763121"/>
         </scene>
     </scenes>
 </document>

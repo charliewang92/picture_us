@@ -1,10 +1,11 @@
 //
-//  cameraView.swift
-//  PictureUs
+//  View2.swift
+//  SnapchatCamera
 //
-//  Created by Charlie Wang on 9/25/16.
-//  Copyright © 2016 Charlie Wang. All rights reserved.
+//  Created by Jared Davidson on 8/26/15.
+//  Copyright (c) 2015 Archetapp. All rights reserved.
 //
+
 import UIKit
 import AVFoundation
 
@@ -30,18 +31,18 @@ class View2: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     }
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         previewLayer?.frame = cameraView.bounds
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         captureSession = AVCaptureSession()
-        captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
+//        captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
         
-        let backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let backCamera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         var error : NSError?
         var input: AVCaptureDeviceInput!
@@ -64,7 +65,7 @@ class View2: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
                 
                 previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
                 previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
-                previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
+                previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
                 cameraView.layer.addSublayer(previewLayer!)
                 captureSession?.startRunning()
                 
