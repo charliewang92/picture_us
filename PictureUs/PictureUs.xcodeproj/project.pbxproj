@@ -14,6 +14,7 @@
 		CB228FC11D96112F00F7956E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB228FBF1D96112F00F7956E /* LaunchScreen.storyboard */; };
 		CB228FCC1D96112F00F7956E /* PictureUsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB228FCB1D96112F00F7956E /* PictureUsTests.swift */; };
 		CB228FD71D96112F00F7956E /* PictureUsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB228FD61D96112F00F7956E /* PictureUsUITests.swift */; };
+		CBE123751D9F1E4700AA8663 /* test_img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBE123741D9F1E4700AA8663 /* test_img.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CB228FD21D96112F00F7956E /* PictureUsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictureUsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB228FD61D96112F00F7956E /* PictureUsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureUsUITests.swift; sourceTree = "<group>"; };
 		CB228FD81D96112F00F7956E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBE123741D9F1E4700AA8663 /* test_img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_img.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		CB228FB51D96112F00F7956E /* PictureUs */ = {
 			isa = PBXGroup;
 			children = (
+				CBE123741D9F1E4700AA8663 /* test_img.jpg */,
 				CB228FB61D96112F00F7956E /* AppDelegate.swift */,
 				CB228FB81D96112F00F7956E /* ViewController.swift */,
 				CB228FBA1D96112F00F7956E /* Main.storyboard */,
@@ -235,6 +238,7 @@
 				CB228FC11D96112F00F7956E /* LaunchScreen.storyboard in Resources */,
 				CB228FBE1D96112F00F7956E /* Assets.xcassets in Resources */,
 				CB228FBC1D96112F00F7956E /* Main.storyboard in Resources */,
+				CBE123751D9F1E4700AA8663 /* test_img.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

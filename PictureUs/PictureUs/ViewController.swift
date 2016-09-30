@@ -9,32 +9,52 @@
 import UIKit
 import Social
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var imageView: UIImageView!
+    var imagePicker: UIImagePickerController!
+    let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-//        let v2 : View2 = View2(nibName: "cameraView", bundle: nil)
-//        
-//        self.addChildViewController(v2)
-//        self.scrollView.addSubview(v2.view)
-//        v2.didMove(toParentViewController: self)
-//        
-//        var v2Frame : CGRect = v2.view.frame
-//        v2Frame.origin.x = self.view.frame.width
-//        v2.view.frame = v2Frame
-//        
-//        self.scrollView.contentSize = CGSize(width: self.view.frame.width * 3, height: self.view.frame.height)
+         picker.delegate = self
     }
+    
+    @IBAction func takePhoto(_ sender: AnyObject) {
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func photoFromLibrary(_ sender: UIBarButtonItem) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        imageView.contentMode = .scaleAspectFit //3
+        imageView.image = chosenImage //4
+        dismiss(animated:true, completion: nil) //5
+    }
+    
+    
     @IBAction func twitterPush(_ sender: AnyObject) {
         print("twitter pushed, will try and share")
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
             let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             twitterSheet.setInitialText("Share on Twitter")
+            twitterSheet.add(imageView.image)
             self.present(twitterSheet, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.alert)
@@ -48,6 +68,7 @@ class ViewController: UIViewController {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
             let facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             facebookSheet.setInitialText("Share on Facebook")
+            facebookSheet.add(imageView.image)
             self.present(facebookSheet, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.alert)
@@ -60,5 +81,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }
 
