@@ -8,18 +8,44 @@
 
 import UIKit
 import Social
+import MessageUI
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var imageView: UIImageView!
     var imagePicker: UIImagePickerController!
     let picker = UIImagePickerController()
+    var phoneNumber: String!
+    var neginPhone: String!
+    var tingtingPhone: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
          picker.delegate = self
+         phoneNumber = "6508106812"
+         neginPhone = "6507877793"
+         tingtingPhone = "2024508285"
+    }
+    
+    @IBAction func sendText(_ sender: AnyObject) {
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "Message Body"
+            controller.addAttachmentData(UIImageJPEGRepresentation(imageView.image!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg")
+            controller.recipients = [phoneNumber, tingtingPhone, neginPhone]
+            controller.messageComposeDelegate = self
+            
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func takePhoto(_ sender: AnyObject) {
@@ -45,6 +71,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         imageView.contentMode = .scaleAspectFit //3
         imageView.image = chosenImage //4
+
         dismiss(animated:true, completion: nil) //5
     }
     
