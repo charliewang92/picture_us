@@ -25,6 +25,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFX-ca-qld">
                                 <frame key="frameInset" minX="67" minY="196" width="67" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <state key="normal" title="Facebook"/>
                                 <connections>
                                     <action selector="facebookPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Xv-gE-O54"/>
@@ -38,6 +39,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM1-0X-MeQ">
                                 <frame key="frameInset" minX="281" minY="196" width="48" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <state key="normal" title="Twitter"/>
                                 <connections>
                                     <action selector="twitterPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="koz-In-iH7"/>
@@ -53,7 +55,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB8-Nj-JDk">
-                                <frame key="frameInset" minX="165" minY="257" width="69" height="30"/>
+                                <frame key="frameInset" minX="153" minY="256" width="69" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <state key="normal" title="Send Text"/>
                                 <connections>
                                     <action selector="sendText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="glO-3u-UOh"/>
@@ -67,6 +70,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="eBk-Vh-eN2" secondAttribute="trailing" constant="133" id="4ef-6t-HdS"/>
                             <constraint firstItem="vM1-0X-MeQ" firstAttribute="leading" secondItem="pB8-Nj-JDk" secondAttribute="trailing" constant="55" id="Ccu-Sh-cjm"/>
                             <constraint firstItem="EwG-zf-NdB" firstAttribute="top" secondItem="gf7-0s-pjq" secondAttribute="bottom" constant="33.5" id="EIY-AG-VAD"/>
+                            <constraint firstItem="pB8-Nj-JDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EZn-FE-GcI"/>
                             <constraint firstItem="eBk-Vh-eN2" firstAttribute="top" secondItem="PnV-k2-QTS" secondAttribute="bottom" constant="34" id="FBA-NA-ZbU"/>
                             <constraint firstItem="vM1-0X-MeQ" firstAttribute="top" secondItem="EwG-zf-NdB" secondAttribute="bottom" constant="115" id="HPa-BB-58B"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eBk-Vh-eN2" secondAttribute="bottom" constant="38" id="IUm-uI-W2X"/>
