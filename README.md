@@ -10,3 +10,4 @@ Photo sharing made easier.
 ##### 9/25/2016 - Added scroll view to transition to second view for cameraView
 ##### 9/30/2016 - Integrated Camera and image picture into app
 ##### 9/30/2016 - Integrated picture taken with Facebook with Twitter share
+##### 9/30/2016 - Text message button and integration added
