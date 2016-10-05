@@ -22,7 +22,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var phoneNumber: String!
     var neginPhone: String!
     var tingtingPhone: String!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
          picker.delegate = self
@@ -31,6 +30,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
          tingtingPhone = "2024508285"
     }
     
+    //Sends text to the phone numbers selected
     @IBAction func sendText(_ sender: AnyObject) {
         if (MFMessageComposeViewController.canSendText()) {
             let controller = MFMessageComposeViewController()
@@ -48,6 +48,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Photo button
     @IBAction func takePhoto(_ sender: AnyObject) {
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
@@ -58,6 +59,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    //Select from photo library
     @IBAction func photoFromLibrary(_ sender: UIBarButtonItem) {
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
@@ -76,6 +78,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     
+    //Twitter share
     @IBAction func twitterPush(_ sender: AnyObject) {
         print("twitter pushed, will try and share")
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
@@ -90,6 +93,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
     }
     
+    //FB share
     @IBAction func facebookPush(_ sender: AnyObject) {
         print("facebook pushed, will try and share")
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){

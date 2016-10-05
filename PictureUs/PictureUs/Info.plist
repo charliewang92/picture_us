@@ -4,6 +4,8 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Take a photo to be shared</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Looking for location</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
