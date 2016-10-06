@@ -11,3 +11,5 @@ Photo sharing made easier.
 ##### 9/30/2016 - Integrated Camera and image picture into app
 ##### 9/30/2016 - Integrated picture taken with Facebook with Twitter share
 ##### 9/30/2016 - Text message button and integration added
+##### 10/5/2016 - Added camera functionality directly to the first view, no more need to click on the take photo button
+
