@@ -9,6 +9,8 @@
 import UIKit
 import Social
 import MessageUI
+import AVFoundation
+
 
 
 
@@ -22,12 +24,63 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var phoneNumber: String!
     var neginPhone: String!
     var tingtingPhone: String!
+    
+    
+    @IBOutlet var cameraView: UIView!
+    var captureSession : AVCaptureSession?
+    var stillImageOutput : AVCaptureStillImageOutput?
+    var previewLayer : AVCaptureVideoPreviewLayer?
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          picker.delegate = self
          phoneNumber = "6508106812"
          neginPhone = "6507877793"
          tingtingPhone = "2024508285"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        previewLayer?.frame = cameraView.bounds
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        captureSession = AVCaptureSession()
+        captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
+        
+        let backCamera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        
+        var error : NSError?
+        var input: AVCaptureDeviceInput!
+        do {
+            input = try AVCaptureDeviceInput(device: backCamera)
+        } catch let error1 as NSError {
+            error = error1
+            input = nil
+        }
+        
+        if (error == nil && captureSession?.canAddInput(input) != nil){
+            
+            captureSession?.addInput(input)
+            
+            stillImageOutput = AVCaptureStillImageOutput()
+            stillImageOutput?.outputSettings = [AVVideoCodecKey : AVVideoCodecJPEG]
+            
+            if (captureSession?.canAddOutput(stillImageOutput) != nil){
+                captureSession?.addOutput(stillImageOutput)
+                
+                previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+                previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
+                previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
+                cameraView.layer.addSublayer(previewLayer!)
+                captureSession?.startRunning()
+                
+            }
+        }
     }
     
     //Sends text to the phone numbers selected
@@ -112,6 +165,60 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func didPressTakePhoto(){
+        
+        if let videoConnection = stillImageOutput?.connection(withMediaType: AVMediaTypeVideo){
+            videoConnection.videoOrientation = AVCaptureVideoOrientation.portrait
+            stillImageOutput?.captureStillImageAsynchronously(from: videoConnection, completionHandler: {
+                (sampleBuffer, error) in
+                
+                if sampleBuffer != nil {
+                    
+                    
+                    var imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+                    var dataProvider  = CGDataProvider(data: imageData as! CFData)
+                    var cgImageRef = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent )
+//                    kCGRenderingIntentDefault
+                    var image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.right)
+                    
+                    self.imageView.image = image
+                    self.imageView.isHidden = false
+                    self.cameraView.isHidden = true
+                }
+            })
+        }
+        
+        
+    }
+    
+    var didTakePhoto = Bool()
+    
+    func didPressTakeAnother(){
+        if didTakePhoto == true{
+            imageView.isHidden = true
+            cameraView.isHidden = false
+            didTakePhoto = false
+            
+        }
+        else{
+            captureSession?.startRunning()
+            didTakePhoto = true
+            didPressTakePhoto()
+            
+        }
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            didPressTakeAnother()
+        }
+        super.touchesBegan(touches, with: event)
+    }
+
+    
     
 }
 
