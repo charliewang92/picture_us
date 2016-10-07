@@ -46,7 +46,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-ce-raw">
-                                        <frame key="frameInset" minY="86" width="333" height="164"/>
+                                        <frame key="frameInset" minY="85" width="333" height="164"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qF5-7n-W2w">
                                         <frame key="frameInset" minY="312" width="333" height="131"/>

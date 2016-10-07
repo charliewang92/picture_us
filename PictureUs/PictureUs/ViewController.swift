@@ -194,7 +194,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     var didTakePhoto = Bool()
-    
+    //This will take a photo and toggle if we can take another photo
     func didPressTakeAnother(){
         if didTakePhoto == true{
             imageView.isHidden = true
