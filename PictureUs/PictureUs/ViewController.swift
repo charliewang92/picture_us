@@ -211,6 +211,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
     }
     
+    // Might need to change this part.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             didPressTakeAnother()
