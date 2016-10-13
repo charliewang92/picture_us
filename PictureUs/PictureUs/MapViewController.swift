@@ -7,11 +7,29 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MapViewController: UIViewController {
 
+class MapViewController: UIViewController, CLLocationManagerDelegate {
+
+    private let locationManager = CLLocationManager()
+    private var previousPoint:CLLocation?
+    private var totalMovementDistance:CLLocationDistance = 0
+    @IBOutlet var latLabel: UILabel!
+    
+    @IBOutlet var longLabel: UILabel!
+    @IBOutlet var distanceTraveledLabel: UILabel!
+    
+    @IBOutlet var longValueLabel: UILabel!
+    @IBOutlet var latValueLabel: UILabel!
+    @IBOutlet var distValueLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +39,15 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func locationManager(manager:CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
+        print("auth")
+        switch status {
+        case .authorized, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        default:
+            locationManager.stopUpdatingLocation()
+        }
+    }
     /*
     // MARK: - Navigation
 

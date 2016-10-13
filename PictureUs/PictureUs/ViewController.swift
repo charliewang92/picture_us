@@ -32,6 +32,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var previewLayer : AVCaptureVideoPreviewLayer?
     
 
+    @IBOutlet var buttonStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,43 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
          phoneNumber = "6508106812"
          neginPhone = "6507877793"
          tingtingPhone = "2024508285"
+        self.view.bringSubview(toFront: imageView)
+        
+//        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+//        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+//        imageView.addGestureRecognizer(swipeRight)
+//        
+//        var swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+//        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+//        imageView.addGestureRecognizer(swipeDown)
+//        
+//        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+//        swipeRight.direction = UISwipeGestureRecognizerDirection.left
+//        imageView.addGestureRecognizer(swipeLeft)
+        
+//        let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+//        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+//        imageView.addGestureRecognizer.addGestureRecognizer(swipeUp)
+    }
+    
+    func respondToSwipeGesture(gesture: UISwipeGestureRecognizer) {
+        print("break point")
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                testSendText()
+            case UISwipeGestureRecognizerDirection.down:
+                testFbPush()
+            case UISwipeGestureRecognizerDirection.left:
+                testTwitterPush()
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped up")
+            default:
+                break
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -96,6 +134,44 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
     }
     
+    func testSendText() {
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "Message Body"
+            controller.addAttachmentData(UIImageJPEGRepresentation(imageView.image!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg")
+            controller.recipients = [phoneNumber, tingtingPhone, neginPhone]
+            controller.messageComposeDelegate = self
+            
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func testFbPush() {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
+            let facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            facebookSheet.setInitialText("Share on Facebook")
+            facebookSheet.add(imageView.image)
+            self.present(facebookSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func testTwitterPush() {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+            let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            twitterSheet.setInitialText("Share on Twitter")
+            twitterSheet.add(imageView.image)
+            self.present(twitterSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         //... handle sms screen actions
         self.dismiss(animated: true, completion: nil)
@@ -133,7 +209,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     //Twitter share
     @IBAction func twitterPush(_ sender: AnyObject) {
-        print("twitter pushed, will try and share")
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
             let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
             twitterSheet.setInitialText("Share on Twitter")
@@ -148,7 +223,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     //FB share
     @IBAction func facebookPush(_ sender: AnyObject) {
-        print("facebook pushed, will try and share")
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
             let facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             facebookSheet.setInitialText("Share on Facebook")
@@ -168,6 +242,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     
     func didPressTakePhoto(){
+        self.view.bringSubview(toFront: buttonStack)
         
         if let videoConnection = stillImageOutput?.connection(withMediaType: AVMediaTypeVideo){
             videoConnection.videoOrientation = AVCaptureVideoOrientation.portrait
@@ -200,6 +275,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             imageView.isHidden = true
             cameraView.isHidden = false
             didTakePhoto = false
+            self.view.sendSubview(toBack: buttonStack)
             
         }
         else{
