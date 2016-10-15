@@ -37,9 +37,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
          picker.delegate = self
-         phoneNumber = "6508106812"
-         neginPhone = "6507877793"
-         tingtingPhone = "2024508285"
+         phoneNumber = ""
+         neginPhone = ""
+         tingtingPhone = ""
         self.view.bringSubview(toFront: imageView)
         
 //        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
