@@ -12,4 +12,6 @@ Photo sharing made easier.
 ##### 9/30/2016 - Integrated picture taken with Facebook with Twitter share
 ##### 9/30/2016 - Text message button and integration added
 ##### 10/5/2016 - Added camera functionality directly to the first view, no more need to click on the take photo button
-
+##### 10/7/2016 - Fixed layout issues so that layout has better formatting and spacing
+##### 10/10/2016 - Added tencent weibo as a sharing possibility, still need to figure what tencent is...
+##### 10/15/2016 - Added swipe gestures and connected gestures directly to sharing apig
