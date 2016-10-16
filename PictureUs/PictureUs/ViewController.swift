@@ -31,8 +31,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var stillImageOutput : AVCaptureStillImageOutput?
     var previewLayer : AVCaptureVideoPreviewLayer?
     
-
     @IBOutlet var buttonStack: UIStackView!
+    var firstTime: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,43 +41,45 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
          neginPhone = ""
          tingtingPhone = ""
         self.view.bringSubview(toFront: imageView)
-        
-//        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-//        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-//        imageView.addGestureRecognizer(swipeRight)
-//        
-//        var swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-//        swipeDown.direction = UISwipeGestureRecognizerDirection.down
-//        imageView.addGestureRecognizer(swipeDown)
-//        
-//        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-//        swipeRight.direction = UISwipeGestureRecognizerDirection.left
-//        imageView.addGestureRecognizer(swipeLeft)
-        
-//        let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-//        swipeUp.direction = UISwipeGestureRecognizerDirection.up
-//        imageView.addGestureRecognizer.addGestureRecognizer(swipeUp)
+        testAction()
     }
     
-    func respondToSwipeGesture(gesture: UISwipeGestureRecognizer) {
-        print("break point")
-        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            
-            
-            switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
-                testSendText()
-            case UISwipeGestureRecognizerDirection.down:
-                testFbPush()
-            case UISwipeGestureRecognizerDirection.left:
-                testTwitterPush()
-            case UISwipeGestureRecognizerDirection.up:
-                print("Swiped up")
-            default:
-                break
-            }
-        }
+    func testAction() {
+        let upRecognizer = UISwipeGestureRecognizer(target: self, action: "handleUp")
+        upRecognizer.direction = UISwipeGestureRecognizerDirection.up
+        self.view?.addGestureRecognizer(upRecognizer)
+        
+        let downRecognizer = UISwipeGestureRecognizer(target: self, action: "handleDown")
+        downRecognizer.direction = UISwipeGestureRecognizerDirection.down
+        self.view?.addGestureRecognizer(downRecognizer)
+        
+        let leftRecognizer = UISwipeGestureRecognizer(target: self, action: "handleLeft")
+        leftRecognizer.direction = UISwipeGestureRecognizerDirection.left
+        self.view?.addGestureRecognizer(leftRecognizer)
+        
+        let rightRecognizer = UISwipeGestureRecognizer(target: self, action: "handleRight")
+        rightRecognizer.direction = UISwipeGestureRecognizerDirection.right
+        self.view?.addGestureRecognizer(rightRecognizer)
+        
+        
     }
+    func handleRight() {
+        testFbPush()
+    }
+    
+    func handleLeft() {
+        testTwitterPush()
+    }
+    
+    func handleDown() {
+        testSendText()
+    }
+    
+    func handleUp() {
+        testWeiboPush()
+    }
+
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -172,6 +174,19 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
     }
     
+    func testWeiboPush() {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTencentWeibo){
+            let weiboSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTencentWeibo)
+            weiboSheet.setInitialText("Share on Weibo")
+            weiboSheet.add(imageView.image)
+            self.present(weiboSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Weibo account to share.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         //... handle sms screen actions
         self.dismiss(animated: true, completion: nil)
@@ -209,16 +224,19 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     //Twitter share
     @IBAction func twitterPush(_ sender: AnyObject) {
-        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
-            let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            twitterSheet.setInitialText("Share on Twitter")
-            twitterSheet.add(imageView.image)
-            self.present(twitterSheet, animated: true, completion: nil)
-        } else {
-            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+        didPressTakeAnother()
+        firstTime = true
+        print("clickd on send")
+//        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+//            let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+//            twitterSheet.setInitialText("Share on Twitter")
+//            twitterSheet.add(imageView.image)
+//            self.present(twitterSheet, animated: true, completion: nil)
+//        } else {
+//            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//        }
     }
     
     //FB share
@@ -243,7 +261,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     func didPressTakePhoto(){
         self.view.bringSubview(toFront: buttonStack)
-        
         if let videoConnection = stillImageOutput?.connection(withMediaType: AVMediaTypeVideo){
             videoConnection.videoOrientation = AVCaptureVideoOrientation.portrait
             stillImageOutput?.captureStillImageAsynchronously(from: videoConnection, completionHandler: {
@@ -287,10 +304,18 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
     }
     
+//    @IBAction func TogglePhoto(_ sender: AnyObject) {
+//            didPressTakeAnother()
+//    }
+    
     // Might need to change this part.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            didPressTakeAnother()
+            if firstTime {
+                didPressTakeAnother()
+                firstTime = false
+            }
+            
         }
         super.touchesBegan(touches, with: event)
     }
