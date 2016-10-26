@@ -17,6 +17,31 @@
 		CB228FCC1D96112F00F7956E /* PictureUsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB228FCB1D96112F00F7956E /* PictureUsTests.swift */; };
 		CB228FD71D96112F00F7956E /* SwiperUsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB228FD61D96112F00F7956E /* SwiperUsUITests.swift */; };
 		CBB8FD3B1DC034D80030EDFC /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */; };
+		CBB8FD3D1DC039DE0030EDFC /* UpArrow_Plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */; };
+		CBB8FD3F1DC039E40030EDFC /* DownArrow_plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */; };
+		CBB8FD411DC039EE0030EDFC /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD401DC039EE0030EDFC /* left-arrow.png */; };
+		CBB8FD431DC039F60030EDFC /* RightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD421DC039F60030EDFC /* RightArrow.png */; };
+		CBB8FD481DC03D0A0030EDFC /* Weibo-Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD441DC03D0A0030EDFC /* Weibo-Logo.jpg */; };
+		CBB8FD491DC03D0A0030EDFC /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD451DC03D0A0030EDFC /* chat.png */; };
+		CBB8FD4A1DC03D0A0030EDFC /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD461DC03D0A0030EDFC /* facebook.png */; };
+		CBB8FD4B1DC03D0A0030EDFC /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD471DC03D0A0030EDFC /* twitter.png */; };
+		CBB8FD5D1DC03D9E0030EDFC /* badoo.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD4C1DC03D9E0030EDFC /* badoo.png */; };
+		CBB8FD5E1DC03D9E0030EDFC /* behance.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD4D1DC03D9E0030EDFC /* behance.png */; };
+		CBB8FD5F1DC03D9E0030EDFC /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD4E1DC03D9E0030EDFC /* chat.png */; };
+		CBB8FD601DC03D9E0030EDFC /* deviantart.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD4F1DC03D9E0030EDFC /* deviantart.png */; };
+		CBB8FD611DC03D9E0030EDFC /* dribbble.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD501DC03D9E0030EDFC /* dribbble.png */; };
+		CBB8FD621DC03D9E0030EDFC /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD511DC03D9E0030EDFC /* facebook.png */; };
+		CBB8FD631DC03D9E0030EDFC /* flickr.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD521DC03D9E0030EDFC /* flickr.png */; };
+		CBB8FD641DC03D9E0030EDFC /* google-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD531DC03D9E0030EDFC /* google-plus.png */; };
+		CBB8FD651DC03D9E0030EDFC /* instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD541DC03D9E0030EDFC /* instagram.png */; };
+		CBB8FD661DC03D9E0030EDFC /* lastfm.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD551DC03D9E0030EDFC /* lastfm.png */; };
+		CBB8FD671DC03D9E0030EDFC /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD561DC03D9E0030EDFC /* linkedin.png */; };
+		CBB8FD681DC03D9E0030EDFC /* pinterest.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD571DC03D9E0030EDFC /* pinterest.png */; };
+		CBB8FD691DC03D9E0030EDFC /* soundcloud.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD581DC03D9E0030EDFC /* soundcloud.png */; };
+		CBB8FD6A1DC03D9E0030EDFC /* swarm.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD591DC03D9E0030EDFC /* swarm.png */; };
+		CBB8FD6B1DC03D9E0030EDFC /* tumblr.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD5A1DC03D9E0030EDFC /* tumblr.png */; };
+		CBB8FD6C1DC03D9E0030EDFC /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD5B1DC03D9E0030EDFC /* twitter.png */; };
+		CBB8FD6D1DC03D9E0030EDFC /* vk.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD5C1DC03D9E0030EDFC /* vk.png */; };
 		CBF75C301DBFF10B00459260 /* Left_FB.png in Resources */ = {isa = PBXBuildFile; fileRef = CBF75C2F1DBFF10B00459260 /* Left_FB.png */; };
 		CBF75C321DBFF33400459260 /* RightArrow_Social.png in Resources */ = {isa = PBXBuildFile; fileRef = CBF75C311DBFF33400459260 /* RightArrow_Social.png */; };
 		CBF75C341DBFF41200459260 /* DownArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CBF75C331DBFF41200459260 /* DownArrow.png */; };
@@ -59,6 +84,31 @@
 		CB228FD61D96112F00F7956E /* SwiperUsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiperUsUITests.swift; sourceTree = "<group>"; };
 		CB228FD81D96112F00F7956E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
+		CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpArrow_Plain.png; path = PictureUs/Assets/ScreenAssets/UpArrow/UpArrow_Plain.png; sourceTree = "<group>"; };
+		CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DownArrow_plain.png; path = PictureUs/Assets/ScreenAssets/DownArrow/DownArrow_plain.png; sourceTree = "<group>"; };
+		CBB8FD401DC039EE0030EDFC /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "left-arrow.png"; path = "PictureUs/Assets/ScreenAssets/LeftArrow/left-arrow.png"; sourceTree = "<group>"; };
+		CBB8FD421DC039F60030EDFC /* RightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RightArrow.png; path = PictureUs/Assets/ScreenAssets/RightArrow/RightArrow.png; sourceTree = "<group>"; };
+		CBB8FD441DC03D0A0030EDFC /* Weibo-Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Weibo-Logo.jpg"; path = "PictureUs/Assets/SocialNW/jpg/Weibo-Logo.jpg"; sourceTree = "<group>"; };
+		CBB8FD451DC03D0A0030EDFC /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chat.png; path = PictureUs/Assets/SocialNW/png/chat.png; sourceTree = "<group>"; };
+		CBB8FD461DC03D0A0030EDFC /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = PictureUs/Assets/SocialNW/png/facebook.png; sourceTree = "<group>"; };
+		CBB8FD471DC03D0A0030EDFC /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = PictureUs/Assets/SocialNW/png/twitter.png; sourceTree = "<group>"; };
+		CBB8FD4C1DC03D9E0030EDFC /* badoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badoo.png; path = PictureUs/Assets/SocialNW/png/badoo.png; sourceTree = "<group>"; };
+		CBB8FD4D1DC03D9E0030EDFC /* behance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = behance.png; path = PictureUs/Assets/SocialNW/png/behance.png; sourceTree = "<group>"; };
+		CBB8FD4E1DC03D9E0030EDFC /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chat.png; path = PictureUs/Assets/SocialNW/png/chat.png; sourceTree = "<group>"; };
+		CBB8FD4F1DC03D9E0030EDFC /* deviantart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = deviantart.png; path = PictureUs/Assets/SocialNW/png/deviantart.png; sourceTree = "<group>"; };
+		CBB8FD501DC03D9E0030EDFC /* dribbble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dribbble.png; path = PictureUs/Assets/SocialNW/png/dribbble.png; sourceTree = "<group>"; };
+		CBB8FD511DC03D9E0030EDFC /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = PictureUs/Assets/SocialNW/png/facebook.png; sourceTree = "<group>"; };
+		CBB8FD521DC03D9E0030EDFC /* flickr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flickr.png; path = PictureUs/Assets/SocialNW/png/flickr.png; sourceTree = "<group>"; };
+		CBB8FD531DC03D9E0030EDFC /* google-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "google-plus.png"; path = "PictureUs/Assets/SocialNW/png/google-plus.png"; sourceTree = "<group>"; };
+		CBB8FD541DC03D9E0030EDFC /* instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instagram.png; path = PictureUs/Assets/SocialNW/png/instagram.png; sourceTree = "<group>"; };
+		CBB8FD551DC03D9E0030EDFC /* lastfm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lastfm.png; path = PictureUs/Assets/SocialNW/png/lastfm.png; sourceTree = "<group>"; };
+		CBB8FD561DC03D9E0030EDFC /* linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linkedin.png; path = PictureUs/Assets/SocialNW/png/linkedin.png; sourceTree = "<group>"; };
+		CBB8FD571DC03D9E0030EDFC /* pinterest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pinterest.png; path = PictureUs/Assets/SocialNW/png/pinterest.png; sourceTree = "<group>"; };
+		CBB8FD581DC03D9E0030EDFC /* soundcloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soundcloud.png; path = PictureUs/Assets/SocialNW/png/soundcloud.png; sourceTree = "<group>"; };
+		CBB8FD591DC03D9E0030EDFC /* swarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swarm.png; path = PictureUs/Assets/SocialNW/png/swarm.png; sourceTree = "<group>"; };
+		CBB8FD5A1DC03D9E0030EDFC /* tumblr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tumblr.png; path = PictureUs/Assets/SocialNW/png/tumblr.png; sourceTree = "<group>"; };
+		CBB8FD5B1DC03D9E0030EDFC /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = PictureUs/Assets/SocialNW/png/twitter.png; sourceTree = "<group>"; };
+		CBB8FD5C1DC03D9E0030EDFC /* vk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vk.png; path = PictureUs/Assets/SocialNW/png/vk.png; sourceTree = "<group>"; };
 		CBF75C2F1DBFF10B00459260 /* Left_FB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Left_FB.png; path = PictureUs/Assets/ScreenAssets/LeftArrow/Left_FB.png; sourceTree = "<group>"; };
 		CBF75C311DBFF33400459260 /* RightArrow_Social.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RightArrow_Social.png; path = PictureUs/Assets/ScreenAssets/RightArrow/RightArrow_Social.png; sourceTree = "<group>"; };
 		CBF75C331DBFF41200459260 /* DownArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DownArrow.png; path = PictureUs/Assets/ScreenAssets/DownArrow/DownArrow.png; sourceTree = "<group>"; };
@@ -102,6 +152,31 @@
 				CBF75C331DBFF41200459260 /* DownArrow.png */,
 				CBF75C351DBFF49700459260 /* UpArrow1.png */,
 				CBF75C371DBFF60800459260 /* settings.png */,
+				CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */,
+				CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */,
+				CBB8FD401DC039EE0030EDFC /* left-arrow.png */,
+				CBB8FD421DC039F60030EDFC /* RightArrow.png */,
+				CBB8FD441DC03D0A0030EDFC /* Weibo-Logo.jpg */,
+				CBB8FD451DC03D0A0030EDFC /* chat.png */,
+				CBB8FD461DC03D0A0030EDFC /* facebook.png */,
+				CBB8FD471DC03D0A0030EDFC /* twitter.png */,
+				CBB8FD4C1DC03D9E0030EDFC /* badoo.png */,
+				CBB8FD4D1DC03D9E0030EDFC /* behance.png */,
+				CBB8FD4E1DC03D9E0030EDFC /* chat.png */,
+				CBB8FD4F1DC03D9E0030EDFC /* deviantart.png */,
+				CBB8FD501DC03D9E0030EDFC /* dribbble.png */,
+				CBB8FD511DC03D9E0030EDFC /* facebook.png */,
+				CBB8FD521DC03D9E0030EDFC /* flickr.png */,
+				CBB8FD531DC03D9E0030EDFC /* google-plus.png */,
+				CBB8FD541DC03D9E0030EDFC /* instagram.png */,
+				CBB8FD551DC03D9E0030EDFC /* lastfm.png */,
+				CBB8FD561DC03D9E0030EDFC /* linkedin.png */,
+				CBB8FD571DC03D9E0030EDFC /* pinterest.png */,
+				CBB8FD581DC03D9E0030EDFC /* soundcloud.png */,
+				CBB8FD591DC03D9E0030EDFC /* swarm.png */,
+				CBB8FD5A1DC03D9E0030EDFC /* tumblr.png */,
+				CBB8FD5B1DC03D9E0030EDFC /* twitter.png */,
+				CBB8FD5C1DC03D9E0030EDFC /* vk.png */,
 				CB228FB51D96112F00F7956E /* Swiper */,
 				CB228FCA1D96112F00F7956E /* SwiperUsTests */,
 				CB228FD51D96112F00F7956E /* SwiperUITests */,
@@ -263,14 +338,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF75C301DBFF10B00459260 /* Left_FB.png in Resources */,
+				CBB8FD691DC03D9E0030EDFC /* soundcloud.png in Resources */,
+				CBB8FD5E1DC03D9E0030EDFC /* behance.png in Resources */,
+				CBB8FD481DC03D0A0030EDFC /* Weibo-Logo.jpg in Resources */,
+				CBB8FD661DC03D9E0030EDFC /* lastfm.png in Resources */,
+				CBB8FD5F1DC03D9E0030EDFC /* chat.png in Resources */,
+				CBB8FD6D1DC03D9E0030EDFC /* vk.png in Resources */,
 				CBF75C361DBFF49700459260 /* UpArrow1.png in Resources */,
+				CBB8FD6C1DC03D9E0030EDFC /* twitter.png in Resources */,
+				CBB8FD611DC03D9E0030EDFC /* dribbble.png in Resources */,
+				CBB8FD651DC03D9E0030EDFC /* instagram.png in Resources */,
+				CBB8FD431DC039F60030EDFC /* RightArrow.png in Resources */,
 				2A21FA961DB81A2800F75717 /* Assets in Resources */,
+				CBB8FD631DC03D9E0030EDFC /* flickr.png in Resources */,
 				CBF75C3A1DC0225700459260 /* UpArrow.png in Resources */,
 				2AC872081DB429E300125403 /* Logo.jpg in Resources */,
+				CBB8FD681DC03D9E0030EDFC /* pinterest.png in Resources */,
+				CBB8FD6B1DC03D9E0030EDFC /* tumblr.png in Resources */,
+				CBB8FD641DC03D9E0030EDFC /* google-plus.png in Resources */,
 				CBF75C341DBFF41200459260 /* DownArrow.png in Resources */,
+				CBB8FD491DC03D0A0030EDFC /* chat.png in Resources */,
 				CBF75C321DBFF33400459260 /* RightArrow_Social.png in Resources */,
+				CBB8FD6A1DC03D9E0030EDFC /* swarm.png in Resources */,
+				CBB8FD3D1DC039DE0030EDFC /* UpArrow_Plain.png in Resources */,
+				CBB8FD411DC039EE0030EDFC /* left-arrow.png in Resources */,
 				CBF75C381DBFF60800459260 /* settings.png in Resources */,
+				CBB8FD4B1DC03D0A0030EDFC /* twitter.png in Resources */,
+				CBB8FD621DC03D9E0030EDFC /* facebook.png in Resources */,
+				CBB8FD601DC03D9E0030EDFC /* deviantart.png in Resources */,
+				CBB8FD4A1DC03D0A0030EDFC /* facebook.png in Resources */,
+				CBB8FD3F1DC039E40030EDFC /* DownArrow_plain.png in Resources */,
 				CB228FBE1D96112F00F7956E /* Assets.xcassets in Resources */,
+				CBB8FD5D1DC03D9E0030EDFC /* badoo.png in Resources */,
+				CBB8FD671DC03D9E0030EDFC /* linkedin.png in Resources */,
 				2A21FA981DB81AB200F75717 /* Launch Screen.storyboard in Resources */,
 				CB228FBC1D96112F00F7956E /* Main.storyboard in Resources */,
 			);

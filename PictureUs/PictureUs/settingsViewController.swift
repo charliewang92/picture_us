@@ -8,8 +8,45 @@
 
 import UIKit
 
-class settingsViewController: UIViewController {
+/**
+ CG point issues
+ 
+ http://stackoverflow.com/questions/37946990/cgrectmake-cgpointmake-cgsizemake-cgrectzero-cgpointzero-is-unavailable-in
+ **/
 
+class settingsViewController: UIViewController {
+    
+    @IBAction func PanFlickerImage(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.view)
+        
+        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+    @IBAction func PanFacebookImage(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.view)
+        
+        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+        }
+    
+    @IBAction func PanTumblrImage(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.view)
+        
+        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+    @IBAction func PanGoogleImage(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.view)
+        
+        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +57,8 @@ class settingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*
@@ -32,4 +71,5 @@ class settingsViewController: UIViewController {
     }
     */
 
+    
 }

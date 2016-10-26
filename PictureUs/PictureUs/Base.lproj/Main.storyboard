@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vM1-0X-MeQ">
-                                <frame key="frameInset" minX="25" minY="35" width="60" height="65"/>
+                                <frame key="frameInset" minX="30" minY="35" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take Another" image="camera-clip-art">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,7 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UpArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="DGd-pR-E4E">
-                                <frame key="frameInset" minX="150" minY="30" width="85" height="75"/>
+                                <frame key="frameInset" minX="130" minY="30" width="85" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-ce-raw">
@@ -114,28 +114,182 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pH-6l-3FY">
-                                <frame key="frameInset" minX="152" minY="251" width="106" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVs-WC-jOs">
+                                <frame key="frameInset" minX="25" minY="12" width="45" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to camera" image="camera-clip-art"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="hrV-wj-Azc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Current Swipe Settings!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pH-6l-3FY">
+                                <frame key="frameInset" minX="93" minY="64" width="226" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVs-WC-jOs">
-                                <frame key="frameInset" minX="152" minY="280" width="107" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UpArrow_Plain.png" translatesAutoresizingMaskIntoConstraints="NO" id="xpq-7m-dnd">
+                                <frame key="frameInset" minX="111" minY="87" width="50" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back to camera"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DownArrow_plain.png" translatesAutoresizingMaskIntoConstraints="NO" id="vOR-8R-ubC">
+                                <frame key="frameInset" minX="111" minY="148" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="qAL-pe-5By">
+                                <frame key="frameInset" minX="110" minY="208" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RightArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="a26-uH-BNh">
+                                <frame key="frameInset" minX="111" minY="279" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="S0v-Sb-OHR">
+                                <frame key="frameInset" minX="215" minY="208" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="y20-ZH-A7H">
+                                <frame key="frameInset" minX="215" minY="279" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chat.png" translatesAutoresizingMaskIntoConstraints="NO" id="oXr-bO-v5W">
+                                <frame key="frameInset" minX="215" minY="148" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Weibo-Logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QlK-L0-Ebx">
+                                <frame key="frameInset" minX="215" minY="87" width="50" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Social Media Networks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyI-o0-Res">
+                                <frame key="frameInset" minX="64" minY="362" width="246" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chat.png" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-aq-gmZ">
+                                <frame key="frameInset" minX="206" minY="410" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swarm.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ojz-FD-dww">
+                                <frame key="frameInset" minX="110" minY="481" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="UAv-ZY-AX7">
+                                <frame key="frameInset" minX="299" minY="481" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="badoo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ssD-0Q-8eA">
+                                <frame key="frameInset" minX="16" minY="552" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instagram.png" translatesAutoresizingMaskIntoConstraints="NO" id="hmK-el-JSg">
+                                <frame key="frameInset" minX="110" minY="552" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linkedin.png" translatesAutoresizingMaskIntoConstraints="NO" id="ogr-bJ-lFa">
+                                <frame key="frameInset" minX="206" minY="552" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lastfm.png" translatesAutoresizingMaskIntoConstraints="NO" id="wN7-bA-G0f">
+                                <frame key="frameInset" minX="299" minY="552" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Weibo-Logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ncd-JD-pid">
+                                <frame key="frameInset" minX="293" minY="410" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9mY-VB-8jy">
+                                <frame key="frameInset" minX="111" minY="410" width="71" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="CKx-ER-Dfn">
+                                        <frame key="frameInset" width="66" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.64704948689999997" green="0.67442562760000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="hrV-wj-Azc"/>
+                                    <outletCollection property="gestureRecognizers" destination="Guh-Nn-xne" appends="YES" id="qPM-Z6-4Va"/>
                                 </connections>
-                            </button>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KuP-wV-e3r">
+                                <frame key="frameInset" minX="16" minY="410" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flickr.png" translatesAutoresizingMaskIntoConstraints="NO" id="dUi-P7-1tb">
+                                        <frame key="frameInset" width="66" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.64704948689999997" green="0.67442562760000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tex-fJ-7nu" appends="YES" id="avc-LJ-edF"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u46-gT-9YW">
+                                <frame key="frameInset" minX="200" minY="481" width="72" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tumblr.png" translatesAutoresizingMaskIntoConstraints="NO" id="WQT-rC-He3">
+                                        <frame key="frameInset" width="66" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.64704948689999997" green="0.67442562760000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6rD-Kt-lmb" appends="YES" id="eJd-B0-Wor"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rX-uY-6P6">
+                                <frame key="frameInset" minX="16" minY="481" width="66" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="google-plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="OZN-iN-m0o">
+                                        <frame key="frameInset" width="66" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.64704948689999997" green="0.67442562760000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="irc-ka-RM7" appends="YES" id="TTi-2U-p2e"/>
+                                </connections>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.64704948694995945" green="0.67442562755693802" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJ3-gZ-J2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tex-fJ-7nu">
+                    <connections>
+                        <action selector="PanFlickerImage:" destination="Fps-U8-7wi" id="XKC-yN-5wL"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Guh-Nn-xne">
+                    <connections>
+                        <action selector="PanFacebookImage:" destination="Fps-U8-7wi" id="TxN-3T-6WJ"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="6rD-Kt-lmb">
+                    <connections>
+                        <action selector="PanTumblrImage:" destination="Fps-U8-7wi" id="ZE7-JT-WMZ"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="irc-ka-RM7">
+                    <connections>
+                        <action selector="PanGoogleImage:" destination="Fps-U8-7wi" id="xtF-UT-ghJ"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2046" y="399"/>
+            <point key="canvasLocation" x="2045.5999999999999" y="398.95052473763121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n79-9A-FNm">
@@ -155,14 +309,47 @@
             </objects>
             <point key="canvasLocation" x="324" y="398.95052473763121"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Wya-vk-4S1">
+            <objects>
+                <viewController id="g4M-qo-Hs4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ETy-bs-P90"/>
+                        <viewControllerLayoutGuide type="bottom" id="4VK-vn-NXz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lX7-Ny-EPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QeO-8h-tVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="DownArrow.png" width="42" height="64"/>
+        <image name="DownArrow_plain.png" width="41" height="41"/>
         <image name="Left_FB.png" width="54" height="40"/>
+        <image name="RightArrow.png" width="40" height="40"/>
         <image name="RightArrow_Social.png" width="58" height="40"/>
         <image name="UpArrow.png" width="284" height="308"/>
+        <image name="UpArrow_Plain.png" width="41" height="41"/>
+        <image name="Weibo-Logo.jpg" width="1000" height="800"/>
+        <image name="badoo.png" width="512" height="512"/>
         <image name="camera-clip-art" width="600" height="600"/>
+        <image name="chat.png" width="512" height="512"/>
+        <image name="facebook.png" width="512" height="512"/>
+        <image name="flickr.png" width="512" height="512"/>
+        <image name="google-plus.png" width="512" height="512"/>
+        <image name="instagram.png" width="512" height="512"/>
+        <image name="lastfm.png" width="512" height="512"/>
+        <image name="left-arrow.png" width="128" height="128"/>
+        <image name="linkedin.png" width="512" height="512"/>
         <image name="settings.png" width="128" height="128"/>
+        <image name="swarm.png" width="512" height="512"/>
+        <image name="tumblr.png" width="512" height="512"/>
+        <image name="twitter.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hrV-wj-Azc"/>
