@@ -20,4 +20,6 @@ Photo sharing made easier.
 ##### 10/19/2016 - Added Launch Screen and imported image assets
 ##### 10/25/2016 - Added Image overlay to image taken, via subview. Now when images are taken, the overlay is included as well.
 ##### 10/25/2016 - Added settings gear and re-enabled take another button.
-##### 10/25/2016 - Added settings page and app can now transition between first view with second view
+##### 10/25/2016 - Added settings page and app can now transition between first view with second view.
+##### 10/25/2016 - Now we can drag icons from selection of media types and into the selection process.
+##### 10/30/2016 - ...next step should be to implement account features
