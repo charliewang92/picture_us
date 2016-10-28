@@ -16,6 +16,16 @@
 		CB228FBE1D96112F00F7956E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB228FBD1D96112F00F7956E /* Assets.xcassets */; };
 		CB228FCC1D96112F00F7956E /* PictureUsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB228FCB1D96112F00F7956E /* PictureUsTests.swift */; };
 		CB228FD71D96112F00F7956E /* SwiperUsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB228FD61D96112F00F7956E /* SwiperUsUITests.swift */; };
+		CB2992681DC40B5200C1530B /* Sdk in Resources */ = {isa = PBXBuildFile; fileRef = CB2992671DC40B5200C1530B /* Sdk */; };
+		CB29926B1DC40B9900C1530B /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992691DC40B9800C1530B /* AWSCore.framework */; };
+		CB29926C1DC40B9900C1530B /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992691DC40B9800C1530B /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB29926D1DC40B9900C1530B /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB29926A1DC40B9800C1530B /* AWSDynamoDB.framework */; };
+		CB29926E1DC40B9900C1530B /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB29926A1DC40B9800C1530B /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB2992771DC40C2500C1530B /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2992721DC40C2500C1530B /* AWSMobileClient.swift */; };
+		CB2992781DC40C2500C1530B /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992731DC40C2500C1530B /* AWSMobileHubHelper.framework */; };
+		CB2992791DC40C2500C1530B /* PictureUsUserSetting1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2992761DC40C2500C1530B /* PictureUsUserSetting1.swift */; };
+		CB29927C1DC40D7800C1530B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB29927B1DC40D7800C1530B /* libsqlite3.0.tbd */; };
+		CB29927E1DC40D8200C1530B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB29927D1DC40D8200C1530B /* libz.tbd */; };
 		CBB8FD3B1DC034D80030EDFC /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */; };
 		CBB8FD3D1DC039DE0030EDFC /* UpArrow_Plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */; };
 		CBB8FD3F1DC039E40030EDFC /* DownArrow_plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */; };
@@ -67,6 +77,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CB29926F1DC40B9900C1530B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB29926E1DC40B9900C1530B /* AWSDynamoDB.framework in Embed Frameworks */,
+				CB29926C1DC40B9900C1530B /* AWSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2A21FA951DB81A2800F75717 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		2A21FA971DB81AB200F75717 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -83,6 +108,14 @@
 		CB228FD21D96112F00F7956E /* SwiperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB228FD61D96112F00F7956E /* SwiperUsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiperUsUITests.swift; sourceTree = "<group>"; };
 		CB228FD81D96112F00F7956E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2992671DC40B5200C1530B /* Sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sdk; sourceTree = "<group>"; };
+		CB2992691DC40B9800C1530B /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
+		CB29926A1DC40B9800C1530B /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = Sdk/Aws/AWSDynamoDB.framework; sourceTree = "<group>"; };
+		CB2992721DC40C2500C1530B /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+		CB2992731DC40C2500C1530B /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		CB2992761DC40C2500C1530B /* PictureUsUserSetting1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureUsUserSetting1.swift; sourceTree = "<group>"; };
+		CB29927B1DC40D7800C1530B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		CB29927D1DC40D8200C1530B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpArrow_Plain.png; path = PictureUs/Assets/ScreenAssets/UpArrow/UpArrow_Plain.png; sourceTree = "<group>"; };
 		CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DownArrow_plain.png; path = PictureUs/Assets/ScreenAssets/DownArrow/DownArrow_plain.png; sourceTree = "<group>"; };
@@ -122,6 +155,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB29927E1DC40D8200C1530B /* libz.tbd in Frameworks */,
+				CB29927C1DC40D7800C1530B /* libsqlite3.0.tbd in Frameworks */,
+				CB29926D1DC40B9900C1530B /* AWSDynamoDB.framework in Frameworks */,
+				CB29926B1DC40B9900C1530B /* AWSCore.framework in Frameworks */,
+				CB2992781DC40C2500C1530B /* AWSMobileHubHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +183,8 @@
 		CB228FAA1D96112F00F7956E = {
 			isa = PBXGroup;
 			children = (
+				CB2992691DC40B9800C1530B /* AWSCore.framework */,
+				CB29926A1DC40B9800C1530B /* AWSDynamoDB.framework */,
 				CBF75C391DC0225700459260 /* UpArrow.png */,
 				2AC872071DB429E300125403 /* Logo.jpg */,
 				CBF75C2F1DBFF10B00459260 /* Left_FB.png */,
@@ -177,10 +217,13 @@
 				CBB8FD5A1DC03D9E0030EDFC /* tumblr.png */,
 				CBB8FD5B1DC03D9E0030EDFC /* twitter.png */,
 				CBB8FD5C1DC03D9E0030EDFC /* vk.png */,
+				CB2992711DC40C2500C1530B /* AmazonAws */,
+				CB2992671DC40B5200C1530B /* Sdk */,
 				CB228FB51D96112F00F7956E /* Swiper */,
 				CB228FCA1D96112F00F7956E /* SwiperUsTests */,
 				CB228FD51D96112F00F7956E /* SwiperUITests */,
 				CB228FB41D96112F00F7956E /* Products */,
+				CB29927A1DC40D7800C1530B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +273,41 @@
 			path = PictureUsUITests;
 			sourceTree = "<group>";
 		};
+		CB2992711DC40C2500C1530B /* AmazonAws */ = {
+			isa = PBXGroup;
+			children = (
+				CB2992721DC40C2500C1530B /* AWSMobileClient.swift */,
+				CB2992731DC40C2500C1530B /* AWSMobileHubHelper.framework */,
+				CB2992741DC40C2500C1530B /* Models */,
+			);
+			path = AmazonAws;
+			sourceTree = "<group>";
+		};
+		CB2992741DC40C2500C1530B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB2992751DC40C2500C1530B /* NoSQL */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB2992751DC40C2500C1530B /* NoSQL */ = {
+			isa = PBXGroup;
+			children = (
+				CB2992761DC40C2500C1530B /* PictureUsUserSetting1.swift */,
+			);
+			path = NoSQL;
+			sourceTree = "<group>";
+		};
+		CB29927A1DC40D7800C1530B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB29927D1DC40D8200C1530B /* libz.tbd */,
+				CB29927B1DC40D7800C1530B /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,6 +318,8 @@
 				CB228FAF1D96112F00F7956E /* Sources */,
 				CB228FB01D96112F00F7956E /* Frameworks */,
 				CB228FB11D96112F00F7956E /* Resources */,
+				CB29926F1DC40B9900C1530B /* Embed Frameworks */,
+				CB2992701DC40BB100C1530B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -348,6 +428,7 @@
 				CBB8FD6C1DC03D9E0030EDFC /* twitter.png in Resources */,
 				CBB8FD611DC03D9E0030EDFC /* dribbble.png in Resources */,
 				CBB8FD651DC03D9E0030EDFC /* instagram.png in Resources */,
+				CB2992681DC40B5200C1530B /* Sdk in Resources */,
 				CBB8FD431DC039F60030EDFC /* RightArrow.png in Resources */,
 				2A21FA961DB81A2800F75717 /* Assets in Resources */,
 				CBB8FD631DC03D9E0030EDFC /* flickr.png in Resources */,
@@ -392,6 +473,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CB2992701DC40BB100C1530B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB228FAF1D96112F00F7956E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -399,6 +496,8 @@
 			files = (
 				CB228FB91D96112F00F7956E /* ViewController.swift in Sources */,
 				CB228FB71D96112F00F7956E /* AppDelegate.swift in Sources */,
+				CB2992771DC40C2500C1530B /* AWSMobileClient.swift in Sources */,
+				CB2992791DC40C2500C1530B /* PictureUsUserSetting1.swift in Sources */,
 				CBB8FD3B1DC034D80030EDFC /* settingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +640,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WPS3Y6MWD7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/AmazonAws",
+				);
 				INFOPLIST_FILE = PictureUs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -559,6 +663,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WPS3Y6MWD7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/AmazonAws",
+				);
 				INFOPLIST_FILE = PictureUs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
