@@ -12,20 +12,25 @@ import AWSMobileHubHelper
 import GoogleSignIn
 
 class SignInViewController: UIViewController {
+    
     var didSignInObserver: AnyObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("in signin controller")
         
+        didSignInObserver =  NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.defaultIdentityManager(),queue: OperationQueue.main, using: {(note: Notification) -> Void in
+            // perform successful login actions here
+        })
         
         
         
         // Google login scopes can be optionally set, but must be set
         // before user authenticates.
-//        AWSGoogleSignInProvider.sharedInstance().setScopes(["profile", "openid"])
 //        // Sets up the view controller that the Google signin will be launched from.
-//        AWSGoogleSignInProvider.sharedInstance().setViewControllerForGoogleSignIn(self)
+        
+        AWSGoogleSignInProvider.sharedInstance().setScopes(["profile", "openid"])
+        AWSGoogleSignInProvider.sharedInstance().setViewControllerForGoogleSignIn(self)
     
     }
     
@@ -34,15 +39,30 @@ class SignInViewController: UIViewController {
         handleGoogleLogin()
     }
     
-    func handleLoginWithSignInProvider(signInProvider: AWSSignInProvider) {
-        AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider, completionHandler:
-            {(result: AnyObject?, error: NSError?) -> Void in
-                if error == nil {
-                    /* Handle successful login. */
-                }
-                print("Login with signin provider result = \(result), error = \(error)")
-        } as! (Any?, Error?) -> Void)
+    deinit {
+        NotificationCenter.default.removeObserver(didSignInObserver)
     }
+    
+    func dimissController() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func handleLoginWithSignInProvider(signInProvider: AWSSignInProvider) {
+        print ("in sign in provider")
+        AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider, completionHandler: {(result: Any?, error: Error?) -> Void in
+            // If no error reported by SignInProvider, discard the sign-in view controller.
+            print ("finished")
+            if error == nil {
+                print ("sign in check!")
+                DispatchQueue.main.async(execute: {
+                    self.dismiss(animated: true, completion: nil)
+                })
+            }
+            print("result = \(result), error = \(error)")
+        })
+    }
+    
+    
     
     func handleGoogleLogin() {
         handleLoginWithSignInProvider(signInProvider: AWSGoogleSignInProvider.sharedInstance())

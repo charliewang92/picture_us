@@ -10,7 +10,7 @@ import UIKit
 import Social
 import MessageUI
 import AVFoundation
-
+import AWSMobileHubHelper
 
 
 
@@ -42,8 +42,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     @IBOutlet var buttonStack: UIStackView!
     var firstTime: Bool = true
+    var signInObserver: AnyObject!
+    var signOutObserver: AnyObject!
     
     override func viewDidLoad() {
+        presentSignInViewController()
+        print("does this go first?")
         super.viewDidLoad()
          picker.delegate = self
          phoneNumber = ""
@@ -54,6 +58,23 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         imageView.addSubview(rightArrow)
         imageView.addSubview(downArrow)
         imageView.addSubview(upArrow)
+        
+        
+        
+        signInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.defaultIdentityManager(), queue: OperationQueue.main, using: {[weak self] (note: Notification) -> Void in
+            guard let strongSelf = self else { return }
+            print("Sign In Observer observed sign in.")
+            })
+        
+        signOutObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignOut, object: AWSIdentityManager.defaultIdentityManager(), queue: OperationQueue.main, using: {[weak self](note: Notification) -> Void in
+            guard let strongSelf = self else { return }
+            print("Sign Out Observer observed sign out.")
+            })
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(signInObserver)
+        NotificationCenter.default.removeObserver(signOutObserver)
     }
     
     func assignSwipeAction() {
@@ -88,6 +109,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     func handleUp() {
         shareImageWithWeibo()
+    }
+    
+    func presentSignInViewController() {
+        if !AWSIdentityManager.defaultIdentityManager().isLoggedIn {
+            let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
+            let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignIn") as! SignInViewController
+            present(signInViewController, animated: true, completion: nil)
+        }
     }
 
     
