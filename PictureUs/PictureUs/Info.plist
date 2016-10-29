@@ -2,32 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>AWS</key>
-    <dict>
-        <key>IdentityManager</key>
-        <dict>
-            <key>Default</key>
-            <dict/>
-        </dict>
-        <key>CredentialsProvider</key>
-        <dict>
-            <key>CognitoIdentity</key>
-            <dict>
-                <key>Default</key>
-                <dict>
-                    <key>PoolId</key>
-                    <string>us-east-1:14ca1b93-0eaa-47c8-81cb-802de82d3b97</string>
-                    <key>Region</key>
-                    <string>us-east-1</string>
-                </dict>
-            </dict>
-        </dict>
-        <key>MobileHub</key>
-        <dict>
-            <key>ProjectClientId</key>
-            <string>MobileHub 1068257d-22ce-40f6-b34a-55f3d1b45891 aws-my-sample-app-ios-swift-v0.4</string>
-        </dict>
-    </dict>
+	<key>AWS</key>
+	<dict>
+		<key>IdentityManager</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Google</key>
+				<string>1044729210744-28rkjvfod252n4unnjjit6dhhes31i5s.apps.googleusercontent.com</string>
+			</dict>
+		</dict>
+		<key>CredentialsProvider</key>
+		<dict>
+			<key>CognitoIdentity</key>
+			<dict>
+				<key>Default</key>
+				<dict>
+					<key>PoolId</key>
+					<string>us-east-1:14ca1b93-0eaa-47c8-81cb-802de82d3b97</string>
+					<key>Region</key>
+					<string>us-east-1</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>MobileHub</key>
+		<dict>
+			<key>ProjectClientId</key>
+			<string>MobileHub 1068257d-22ce-40f6-b34a-55f3d1b45891 aws-my-sample-app-ios-swift-v0.4</string>
+		</dict>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

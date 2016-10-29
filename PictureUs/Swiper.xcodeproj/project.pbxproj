@@ -26,6 +26,17 @@
 		CB2992791DC40C2500C1530B /* PictureUsUserSetting1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2992761DC40C2500C1530B /* PictureUsUserSetting1.swift */; };
 		CB29927C1DC40D7800C1530B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB29927B1DC40D7800C1530B /* libsqlite3.0.tbd */; };
 		CB29927E1DC40D8200C1530B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB29927D1DC40D8200C1530B /* libz.tbd */; };
+		CB2992831DC4127500C1530B /* UserIdentityAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2992821DC4127500C1530B /* UserIdentityAccess.swift */; };
+		CB2992851DC4137B00C1530B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992841DC4137B00C1530B /* AddressBook.framework */; };
+		CB2992871DC4138300C1530B /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992861DC4138300C1530B /* SafariServices.framework */; };
+		CB2992891DC4138A00C1530B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992881DC4138A00C1530B /* SystemConfiguration.framework */; };
+		CB2992931DC41CE000C1530B /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB29928D1DC41CE000C1530B /* GoogleNetworkingUtilities.framework */; };
+		CB2992941DC41CE000C1530B /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB29928E1DC41CE000C1530B /* GoogleSignIn.framework */; };
+		CB2992951DC41CE000C1530B /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB29928F1DC41CE000C1530B /* GoogleSymbolUtilities.framework */; };
+		CB2992961DC41CE000C1530B /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992901DC41CE000C1530B /* GoogleAppUtilities.framework */; };
+		CB2992971DC41CE000C1530B /* GoogleAuthUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992911DC41CE000C1530B /* GoogleAuthUtilities.framework */; };
+		CB2992981DC41CE000C1530B /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992921DC41CE000C1530B /* GoogleUtilities.framework */; };
+		CB29929C1DC41DD900C1530B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29929B1DC41DD900C1530B /* SignInViewController.swift */; };
 		CBB8FD3B1DC034D80030EDFC /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */; };
 		CBB8FD3D1DC039DE0030EDFC /* UpArrow_Plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */; };
 		CBB8FD3F1DC039E40030EDFC /* DownArrow_plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */; };
@@ -116,6 +127,18 @@
 		CB2992761DC40C2500C1530B /* PictureUsUserSetting1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureUsUserSetting1.swift; sourceTree = "<group>"; };
 		CB29927B1DC40D7800C1530B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		CB29927D1DC40D8200C1530B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CB2992821DC4127500C1530B /* UserIdentityAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdentityAccess.swift; sourceTree = "<group>"; };
+		CB2992841DC4137B00C1530B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		CB2992861DC4138300C1530B /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		CB2992881DC4138A00C1530B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CB29928B1DC41BE600C1530B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CB29928D1DC41CE000C1530B /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Sdk/Google/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		CB29928E1DC41CE000C1530B /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Sdk/Google/GoogleSignIn.framework; sourceTree = "<group>"; };
+		CB29928F1DC41CE000C1530B /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Sdk/Google/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		CB2992901DC41CE000C1530B /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppUtilities.framework; path = Sdk/Google/GoogleAppUtilities.framework; sourceTree = "<group>"; };
+		CB2992911DC41CE000C1530B /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAuthUtilities.framework; path = Sdk/Google/GoogleAuthUtilities.framework; sourceTree = "<group>"; };
+		CB2992921DC41CE000C1530B /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Sdk/Google/GoogleUtilities.framework; sourceTree = "<group>"; };
+		CB29929B1DC41DD900C1530B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpArrow_Plain.png; path = PictureUs/Assets/ScreenAssets/UpArrow/UpArrow_Plain.png; sourceTree = "<group>"; };
 		CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DownArrow_plain.png; path = PictureUs/Assets/ScreenAssets/DownArrow/DownArrow_plain.png; sourceTree = "<group>"; };
@@ -155,11 +178,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB29927E1DC40D8200C1530B /* libz.tbd in Frameworks */,
-				CB29927C1DC40D7800C1530B /* libsqlite3.0.tbd in Frameworks */,
+				CB2992931DC41CE000C1530B /* GoogleNetworkingUtilities.framework in Frameworks */,
+				CB2992941DC41CE000C1530B /* GoogleSignIn.framework in Frameworks */,
+				CB2992951DC41CE000C1530B /* GoogleSymbolUtilities.framework in Frameworks */,
+				CB2992961DC41CE000C1530B /* GoogleAppUtilities.framework in Frameworks */,
+				CB2992971DC41CE000C1530B /* GoogleAuthUtilities.framework in Frameworks */,
+				CB2992981DC41CE000C1530B /* GoogleUtilities.framework in Frameworks */,
+				CB2992851DC4137B00C1530B /* AddressBook.framework in Frameworks */,
+				CB2992871DC4138300C1530B /* SafariServices.framework in Frameworks */,
+				CB2992891DC4138A00C1530B /* SystemConfiguration.framework in Frameworks */,
 				CB29926D1DC40B9900C1530B /* AWSDynamoDB.framework in Frameworks */,
 				CB29926B1DC40B9900C1530B /* AWSCore.framework in Frameworks */,
 				CB2992781DC40C2500C1530B /* AWSMobileHubHelper.framework in Frameworks */,
+				CB29927E1DC40D8200C1530B /* libz.tbd in Frameworks */,
+				CB29927C1DC40D7800C1530B /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +249,7 @@
 				CBB8FD5A1DC03D9E0030EDFC /* tumblr.png */,
 				CBB8FD5B1DC03D9E0030EDFC /* twitter.png */,
 				CBB8FD5C1DC03D9E0030EDFC /* vk.png */,
+				CB29927F1DC4117F00C1530B /* UserIdentity */,
 				CB2992711DC40C2500C1530B /* AmazonAws */,
 				CB2992671DC40B5200C1530B /* Sdk */,
 				CB228FB51D96112F00F7956E /* Swiper */,
@@ -248,6 +281,7 @@
 				CB228FC21D96112F00F7956E /* Info.plist */,
 				2A21FA951DB81A2800F75717 /* Assets */,
 				2A21FA971DB81AB200F75717 /* Launch Screen.storyboard */,
+				CB29929B1DC41DD900C1530B /* SignInViewController.swift */,
 			);
 			name = Swiper;
 			path = PictureUs;
@@ -302,10 +336,28 @@
 		CB29927A1DC40D7800C1530B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB29928D1DC41CE000C1530B /* GoogleNetworkingUtilities.framework */,
+				CB29928E1DC41CE000C1530B /* GoogleSignIn.framework */,
+				CB29928F1DC41CE000C1530B /* GoogleSymbolUtilities.framework */,
+				CB2992901DC41CE000C1530B /* GoogleAppUtilities.framework */,
+				CB2992911DC41CE000C1530B /* GoogleAuthUtilities.framework */,
+				CB2992921DC41CE000C1530B /* GoogleUtilities.framework */,
+				CB29928B1DC41BE600C1530B /* StoreKit.framework */,
+				CB2992881DC4138A00C1530B /* SystemConfiguration.framework */,
+				CB2992861DC4138300C1530B /* SafariServices.framework */,
+				CB2992841DC4137B00C1530B /* AddressBook.framework */,
 				CB29927D1DC40D8200C1530B /* libz.tbd */,
 				CB29927B1DC40D7800C1530B /* libsqlite3.0.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB29927F1DC4117F00C1530B /* UserIdentity */ = {
+			isa = PBXGroup;
+			children = (
+				CB2992821DC4127500C1530B /* UserIdentityAccess.swift */,
+			);
+			name = UserIdentity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +546,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB29929C1DC41DD900C1530B /* SignInViewController.swift in Sources */,
+				CB2992831DC4127500C1530B /* UserIdentityAccess.swift in Sources */,
 				CB228FB91D96112F00F7956E /* ViewController.swift in Sources */,
 				CB228FB71D96112F00F7956E /* AppDelegate.swift in Sources */,
 				CB2992771DC40C2500C1530B /* AWSMobileClient.swift in Sources */,
@@ -644,10 +698,18 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sdk/Aws",
 					"$(PROJECT_DIR)/AmazonAws",
+					"$(PROJECT_DIR)/Sdk/Google",
 				);
 				INFOPLIST_FILE = PictureUs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleSignIn.framework/GoogleSignIn",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleUtilities.framework/GoogleUtilities",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -667,10 +729,18 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sdk/Aws",
 					"$(PROJECT_DIR)/AmazonAws",
+					"$(PROJECT_DIR)/Sdk/Google",
 				);
 				INFOPLIST_FILE = PictureUs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleSignIn.framework/GoogleSignIn",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleUtilities.framework/GoogleUtilities",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

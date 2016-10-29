@@ -302,17 +302,17 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="u3e-8e-lvY"/>
+                        <segue destination="g4M-qo-Hs4" kind="relationship" relationship="rootViewController" id="AV8-1o-6Fq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2R-Et-2ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="398.95052473763121"/>
+            <point key="canvasLocation" x="-143" y="362"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="Wya-vk-4S1">
             <objects>
-                <viewController id="g4M-qo-Hs4" sceneMemberID="viewController">
+                <viewController id="g4M-qo-Hs4" customClass="SignInViewController" customModule="Swiper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ETy-bs-P90"/>
                         <viewControllerLayoutGuide type="bottom" id="4VK-vn-NXz"/>
@@ -320,16 +320,44 @@
                     <view key="view" contentMode="scaleToFill" id="lX7-Ny-EPQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Signin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMF-BY-njs">
+                                <frame key="frameInset" minX="168" minY="113" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfd-KL-YvH">
+                                <frame key="frameInset" minX="46" minY="189" width="294" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="GoogleButton"/>
+                                <connections>
+                                    <action selector="googleButton:" destination="g4M-qo-Hs4" eventType="touchUpInside" id="gWe-jU-35M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUA-k9-j1q">
+                                <frame key="frameInset" minX="184" minY="318" width="46" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="VVr-rZ-yAf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="iZx-Sb-0Rq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QeO-8h-tVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="576.79999999999995" y="-29.23538230884558"/>
         </scene>
     </scenes>
     <resources>
         <image name="DownArrow.png" width="42" height="64"/>
         <image name="DownArrow_plain.png" width="41" height="41"/>
+        <image name="GoogleButton" width="240" height="37"/>
         <image name="Left_FB.png" width="54" height="40"/>
         <image name="RightArrow.png" width="40" height="40"/>
         <image name="RightArrow_Social.png" width="58" height="40"/>
@@ -352,6 +380,6 @@
         <image name="twitter.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hrV-wj-Azc"/>
+        <segue reference="VVr-rZ-yAf"/>
     </inferredMetricsTieBreakers>
 </document>
