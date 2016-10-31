@@ -37,6 +37,7 @@
 		CB2992971DC41CE000C1530B /* GoogleAuthUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992911DC41CE000C1530B /* GoogleAuthUtilities.framework */; };
 		CB2992981DC41CE000C1530B /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2992921DC41CE000C1530B /* GoogleUtilities.framework */; };
 		CB29929C1DC41DD900C1530B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29929B1DC41DD900C1530B /* SignInViewController.swift */; };
+		CB518E471DC4FB0100E15251 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB518E461DC4FB0100E15251 /* SignIn.storyboard */; };
 		CBB8FD3B1DC034D80030EDFC /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */; };
 		CBB8FD3D1DC039DE0030EDFC /* UpArrow_Plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */; };
 		CBB8FD3F1DC039E40030EDFC /* DownArrow_plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */; };
@@ -139,6 +140,7 @@
 		CB2992911DC41CE000C1530B /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAuthUtilities.framework; path = Sdk/Google/GoogleAuthUtilities.framework; sourceTree = "<group>"; };
 		CB2992921DC41CE000C1530B /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Sdk/Google/GoogleUtilities.framework; sourceTree = "<group>"; };
 		CB29929B1DC41DD900C1530B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		CB518E461DC4FB0100E15251 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpArrow_Plain.png; path = PictureUs/Assets/ScreenAssets/UpArrow/UpArrow_Plain.png; sourceTree = "<group>"; };
 		CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DownArrow_plain.png; path = PictureUs/Assets/ScreenAssets/DownArrow/DownArrow_plain.png; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				CB228FB81D96112F00F7956E /* ViewController.swift */,
 				CB228FBA1D96112F00F7956E /* Main.storyboard */,
 				CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */,
+				CB518E461DC4FB0100E15251 /* SignIn.storyboard */,
 				CB228FBD1D96112F00F7956E /* Assets.xcassets */,
 				CB228FC21D96112F00F7956E /* Info.plist */,
 				2A21FA951DB81A2800F75717 /* Assets */,
@@ -475,6 +478,7 @@
 				CBB8FD481DC03D0A0030EDFC /* Weibo-Logo.jpg in Resources */,
 				CBB8FD661DC03D9E0030EDFC /* lastfm.png in Resources */,
 				CBB8FD5F1DC03D9E0030EDFC /* chat.png in Resources */,
+				CB518E471DC4FB0100E15251 /* SignIn.storyboard in Resources */,
 				CBB8FD6D1DC03D9E0030EDFC /* vk.png in Resources */,
 				CBF75C361DBFF49700459260 /* UpArrow1.png in Resources */,
 				CBB8FD6C1DC03D9E0030EDFC /* twitter.png in Resources */,

@@ -47,7 +47,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     override func viewDidLoad() {
         presentSignInViewController()
-        print("does this go first?")
         super.viewDidLoad()
          picker.delegate = self
          phoneNumber = ""

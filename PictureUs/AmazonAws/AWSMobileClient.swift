@@ -78,9 +78,8 @@ class AWSMobileClient: NSObject {
         let didFinishLaunching: Bool = AWSIdentityManager.defaultIdentityManager().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
 
         if (!isInitialized) {
-            AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
-                print("Result: \(result) \n Error:\(error)")
-            } as! (Any?, Error?) -> Void)
+            AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: {(result: Any?, error: Error?) -> Void in} )
+            
             isInitialized = true
         }
 

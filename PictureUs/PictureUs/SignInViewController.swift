@@ -11,6 +11,7 @@ import UIKit
 import AWSMobileHubHelper
 import GoogleSignIn
 
+
 class SignInViewController: UIViewController {
     
     var didSignInObserver: AnyObject!
