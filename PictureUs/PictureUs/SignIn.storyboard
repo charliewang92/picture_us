@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,23 +18,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekD-74-y1I">
-                                <frame key="frameInset" minX="174" minY="260" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cameraImage.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="9j5-XQ-BVX">
+                                <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome To Swiper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTg-I4-m8l">
+                                <frame key="frameInset" minX="69" minY="28" width="237" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-lD-FoE" userLabel="Facebook Sign-in Button">
+                                <frame key="frameInset" minX="67" minY="567" width="241" height="80"/>
+                                <state key="normal" image="FacebookLoginButton240"/>
+                                <connections>
+                                    <action selector="facebookButton:" destination="Xuk-sV-Hhu" eventType="touchUpInside" id="dxD-lg-f0L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekD-74-y1I" userLabel="Google Sign-in Button">
+                                <frame key="frameInset" minX="67" minY="483" width="241" height="37"/>
+                                <state key="normal" title="Button" image="GoogleButton"/>
                                 <connections>
                                     <action selector="googleButton:" destination="Xuk-sV-Hhu" eventType="touchUpInside" id="a8q-Dz-xdz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Signin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTg-I4-m8l">
-                                <frame key="frameInset" minX="166" minY="92" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ekD-74-y1I" firstAttribute="leading" secondItem="wTg-I4-m8l" secondAttribute="trailing" constant="-239" id="5vG-Rf-am0"/>
+                            <constraint firstItem="wTg-I4-m8l" firstAttribute="top" secondItem="V2m-dj-aQm" secondAttribute="bottom" constant="8" id="GoN-YS-Xue"/>
+                            <constraint firstItem="wTg-I4-m8l" firstAttribute="centerX" secondItem="IJa-Se-6Wn" secondAttribute="centerX" id="g5H-Es-VgY"/>
+                            <constraint firstItem="Ogp-lD-FoE" firstAttribute="top" secondItem="ekD-74-y1I" secondAttribute="bottom" constant="15" id="gos-tE-afJ"/>
+                            <constraint firstItem="Ogp-lD-FoE" firstAttribute="leading" secondItem="ekD-74-y1I" secondAttribute="trailing" constant="-241" id="hJB-un-8jk"/>
+                            <constraint firstItem="ekD-74-y1I" firstAttribute="top" secondItem="wTg-I4-m8l" secondAttribute="bottom" constant="472" id="nFF-f2-X2c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wTg-I4-m8l" secondAttribute="trailing" constant="53" id="olq-Fq-6Fe"/>
+                            <constraint firstItem="wTg-I4-m8l" firstAttribute="leading" secondItem="IJa-Se-6Wn" secondAttribute="leadingMargin" constant="53" id="qaC-uN-TYi"/>
+                            <constraint firstItem="ekD-74-y1I" firstAttribute="centerX" secondItem="IJa-Se-6Wn" secondAttribute="centerX" id="rk9-fh-MUg"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSJ-xf-QEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,4 +62,9 @@
             <point key="canvasLocation" x="232.80000000000001" y="141.67916041979012"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FacebookLoginButton240" width="240" height="37"/>
+        <image name="GoogleButton" width="240" height="37"/>
+        <image name="cameraImage.jpeg" width="168" height="300"/>
+    </resources>
 </document>

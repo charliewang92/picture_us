@@ -18,23 +18,23 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("in signin controller")
-        
         didSignInObserver =  NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.defaultIdentityManager(),queue: OperationQueue.main, using: {(note: Notification) -> Void in
             // perform successful login actions here
         })
         
-        
-        
         // Google login scopes can be optionally set, but must be set
         // before user authenticates.
-//        // Sets up the view controller that the Google signin will be launched from.
-        
+        // Sets up the view controller that the Google signin will be launched from.
         AWSGoogleSignInProvider.sharedInstance().setScopes(["profile", "openid"])
         AWSGoogleSignInProvider.sharedInstance().setViewControllerForGoogleSignIn(self)
     
     }
     
+    @IBAction func facebookButton(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Sign In", message: "Facebook Sign In Not Yet Supported!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func googleButton(_ sender: AnyObject) {
         handleGoogleLogin()
@@ -49,12 +49,9 @@ class SignInViewController: UIViewController {
     }
     
     func handleLoginWithSignInProvider(signInProvider: AWSSignInProvider) {
-        print ("in sign in provider")
         AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider, completionHandler: {(result: Any?, error: Error?) -> Void in
             // If no error reported by SignInProvider, discard the sign-in view controller.
-            print ("finished")
             if error == nil {
-                print ("sign in check!")
                 DispatchQueue.main.async(execute: {
                     self.dismiss(animated: true, completion: nil)
                 })
@@ -62,13 +59,7 @@ class SignInViewController: UIViewController {
             print("result = \(result), error = \(error)")
         })
     }
-    
-    
-    
     func handleGoogleLogin() {
         handleLoginWithSignInProvider(signInProvider: AWSGoogleSignInProvider.sharedInstance())
     }
-    
-    
-    
 }

@@ -13,9 +13,14 @@ import AVFoundation
 import AWSMobileHubHelper
 
 
-
+/**
+ This class will handle most of the logic that coordinates camera usage and image sharing
+**/
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    //Maintain access to this view controller
+    static var mainViewcontroller: UIViewController?
+
     @IBOutlet var leftArrow: UIImageView!
     @IBOutlet var rightArrow: UIImageView!
     @IBOutlet var downArrow: UIImageView!
@@ -29,10 +34,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var imagePicker: UIImagePickerController!
     let picker = UIImagePickerController()
     var phoneNumber: String!
-    var neginPhone: String!
-    var tingtingPhone: String!
     
-    @IBOutlet var logoView: UIView!
     @IBOutlet var cameraView: UIView!
     @IBOutlet var takeAnotherButton: UIButton!
     
@@ -40,18 +42,16 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var stillImageOutput : AVCaptureStillImageOutput?
     var previewLayer : AVCaptureVideoPreviewLayer?
     
-    @IBOutlet var buttonStack: UIStackView!
     var firstTime: Bool = true
     var signInObserver: AnyObject!
     var signOutObserver: AnyObject!
     
     override func viewDidLoad() {
         presentSignInViewController()
+        ViewController.mainViewcontroller = self
         super.viewDidLoad()
          picker.delegate = self
          phoneNumber = ""
-         neginPhone = ""
-         tingtingPhone = ""
         assignSwipeAction()
         imageView.addSubview(leftArrow)
         imageView.addSubview(rightArrow)
@@ -109,6 +109,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     func handleUp() {
         shareImageWithWeibo()
     }
+
     
     func presentSignInViewController() {
         if !AWSIdentityManager.defaultIdentityManager().isLoggedIn {
@@ -117,8 +118,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             present(signInViewController, animated: true, completion: nil)
         }
     }
-
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -165,27 +164,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
     }
     
-    //Sends text to the phone numbers selected
-    @IBAction func sendText(_ sender: AnyObject) {
-        if (MFMessageComposeViewController.canSendText()) {
-            let controller = MFMessageComposeViewController()
-            controller.body = "Message Body"
-            controller.addAttachmentData(UIImageJPEGRepresentation(imageView.image!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg")
-            controller.recipients = [phoneNumber, tingtingPhone, neginPhone]
-            controller.messageComposeDelegate = self
-            
-            self.present(controller, animated: true, completion: nil)
-        }
-    }
-    
     func sendImageMessage() {
         if (MFMessageComposeViewController.canSendText()) {
             let controller = MFMessageComposeViewController()
             controller.body = "Message Body"
             controller.addAttachmentData(UIImageJPEGRepresentation(imageView.image!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg")
-            controller.recipients = [phoneNumber, tingtingPhone, neginPhone]
+            controller.recipients = [phoneNumber]
             controller.messageComposeDelegate = self
-            
             self.present(controller, animated: true, completion: nil)
         }
     }
@@ -253,7 +238,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         present(picker, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController,
+    private func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
@@ -264,45 +249,18 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     
-    //Twitter share
-    @IBAction func twitterPush(_ sender: AnyObject) {
+    //Take Another Photo
+    @IBAction func takeAnotherPhoto(_ sender: AnyObject) {
         didPressTakeAnother()
         firstTime = true
-        print("clickd on send")
-//        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
-//            let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-//            twitterSheet.setInitialText("Share on Twitter")
-//            twitterSheet.add(imageView.image)
-//            self.present(twitterSheet, animated: true, completion: nil)
-//        } else {
-//            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
-//        }
     }
     
-    //FB share
-    @IBAction func shareWithFacebook(_ sender: AnyObject) {
-        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
-            let facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            facebookSheet.setInitialText("Share on Facebook")
-            facebookSheet.add(imageView.image)
-            self.present(facebookSheet, animated: true, completion: nil)
-        } else {
-            let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
     func didPressTakePhoto(){
-//        buttonStack.isHidden = false
         if let videoConnection = stillImageOutput?.connection(withMediaType: AVMediaTypeVideo){
             videoConnection.videoOrientation = AVCaptureVideoOrientation.portrait
             stillImageOutput?.captureStillImageAsynchronously(from: videoConnection, completionHandler: {
@@ -314,13 +272,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                     let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
                     let dataProvider  = CGDataProvider(data: imageData as! CFData)
                     let cgImageRef = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent )
-//                    kCGRenderingIntentDefault
                     let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.right)
                     
                     self.imageView.image = image
-                    
-//                    self.imageView.isHidden = false
-//                    self.cameraView.isHidden = true
                 }
             })
         }
@@ -328,37 +282,24 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.view.bringSubview(toFront: settingPageButton)
         self.view.bringSubview(toFront: takeAnotherButton)
 
-//        self.view.bringSubview(toFront: buttonStack)
     }
     
     var didTakePhoto = Bool()
     //This will take a photo and toggle if we can take another photo
     func didPressTakeAnother(){
         if didTakePhoto == true{
-//            imageView.isHidden = true
-//            cameraView.isHidden = false
             didTakePhoto = false
-//            self.view.sendSubview(toBack: buttonStack)
             self.view.sendSubview(toBack: imageView)
             self.view.sendSubview(toBack: takeAnotherButton)
             self.view.sendSubview(toBack: settingPageButton)
-
-
-            buttonStack.isHidden = true
-//            self.view.sendSubview(toBack: buttonStack)
         }
         else{
             captureSession?.startRunning()
             didTakePhoto = true
             didPressTakePhoto()
-            
         }
         
     }
-    
-//    @IBAction func TogglePhoto(_ sender: AnyObject) {
-//            didPressTakeAnother()
-//    }
     
     // Might need to change this part.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -371,8 +312,5 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
         super.touchesBegan(touches, with: event)
     }
-
-    
-    
 }
 

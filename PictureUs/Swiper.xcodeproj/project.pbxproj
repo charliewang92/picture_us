@@ -39,6 +39,7 @@
 		CB29929C1DC41DD900C1530B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB29929B1DC41DD900C1530B /* SignInViewController.swift */; };
 		CB518E471DC4FB0100E15251 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB518E461DC4FB0100E15251 /* SignIn.storyboard */; };
 		CB518E491DC70C8100E15251 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = CB518E481DC70C8100E15251 /* logout.png */; };
+		CB518E8B1DC7DE4200E15251 /* cameraImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CB518E8A1DC7DE4200E15251 /* cameraImage.jpeg */; };
 		CBB8FD3B1DC034D80030EDFC /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */; };
 		CBB8FD3D1DC039DE0030EDFC /* UpArrow_Plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */; };
 		CBB8FD3F1DC039E40030EDFC /* DownArrow_plain.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */; };
@@ -143,6 +144,7 @@
 		CB29929B1DC41DD900C1530B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CB518E461DC4FB0100E15251 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		CB518E481DC70C8100E15251 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
+		CB518E8A1DC7DE4200E15251 /* cameraImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cameraImage.jpeg; sourceTree = "<group>"; };
 		CBB8FD3A1DC034D80030EDFC /* settingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		CBB8FD3C1DC039DE0030EDFC /* UpArrow_Plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpArrow_Plain.png; path = PictureUs/Assets/ScreenAssets/UpArrow/UpArrow_Plain.png; sourceTree = "<group>"; };
 		CBB8FD3E1DC039E40030EDFC /* DownArrow_plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DownArrow_plain.png; path = PictureUs/Assets/ScreenAssets/DownArrow/DownArrow_plain.png; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				CBB8FD5B1DC03D9E0030EDFC /* twitter.png */,
 				CBB8FD5C1DC03D9E0030EDFC /* vk.png */,
 				CB518E481DC70C8100E15251 /* logout.png */,
+				CB518E8A1DC7DE4200E15251 /* cameraImage.jpeg */,
 				CB29927F1DC4117F00C1530B /* UserIdentity */,
 				CB2992711DC40C2500C1530B /* AmazonAws */,
 				CB2992671DC40B5200C1530B /* Sdk */,
@@ -475,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB518E8B1DC7DE4200E15251 /* cameraImage.jpeg in Resources */,
 				CBF75C301DBFF10B00459260 /* Left_FB.png in Resources */,
 				CBB8FD691DC03D9E0030EDFC /* soundcloud.png in Resources */,
 				CBB8FD5E1DC03D9E0030EDFC /* behance.png in Resources */,
