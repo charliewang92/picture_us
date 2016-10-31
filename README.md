@@ -23,5 +23,4 @@ Photo sharing made easier.
 ##### 10/25/2016 - Added settings page and app can now transition between first view with second view.
 ##### 10/25/2016 - Now we can drag icons from selection of media types and into the selection process.
 ##### 10/29/2016 - Integrated with AWS mobile hub signin.
-##### 10/29/2016 - Created new google sign in but currently does not allow transition after signin, need to debug for loginWithSignin
-##### 10/30/2016 - ...next step should be to implement account features
+##### 10/30/2016 - App now allows for sign in
