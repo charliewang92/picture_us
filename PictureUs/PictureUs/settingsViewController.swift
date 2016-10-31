@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AWSMobileHubHelper
+
 
 /**
  CG point issues
@@ -47,6 +49,10 @@ class settingsViewController: UIViewController {
         
         sender.setTranslation(CGPoint.zero, in: self.view)
     }
+    
+    @IBAction func logOut(_ sender: AnyObject) {
+        handleLogout()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,9 +64,29 @@ class settingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func handleLogout() {
+        if (AWSIdentityManager.defaultIdentityManager().isLoggedIn) {
+            AWSIdentityManager.defaultIdentityManager().logout(completionHandler: {(result: Any?, error: Error?) -> Void in
+                self.navigationController!.popToRootViewController(animated: false)
+                ViewController.mainViewcontroller?.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+                self.presentSignInViewController()
+            })
+        } else {
+            assert(false)
+        }
+    }
     
     
+    func presentSignInViewController() {
+        if !AWSIdentityManager.defaultIdentityManager().isLoggedIn {
+            let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
+            let signInViewController = storyboard.instantiateViewController(withIdentifier: "SignIn") as! SignInViewController
+            present(signInViewController, animated: true, completion: nil)
+        }
+    }
 
+    
     /*
     // MARK: - Navigation
 

@@ -259,6 +259,14 @@
                                     <outletCollection property="gestureRecognizers" destination="irc-ka-RM7" appends="YES" id="TTi-2U-p2e"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zI-Ei-6tz">
+                                <frame key="frameInset" minX="300" minY="12" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="logout"/>
+                                <connections>
+                                    <action selector="logOut:" destination="Fps-U8-7wi" eventType="touchUpInside" id="3P7-8L-AUn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.64704948694995945" green="0.67442562755693802" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -294,7 +302,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oZ4-EH-xeD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KXu-5Q-gjl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KXu-5Q-gjl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -372,12 +380,13 @@
         <image name="lastfm.png" width="512" height="512"/>
         <image name="left-arrow.png" width="128" height="128"/>
         <image name="linkedin.png" width="512" height="512"/>
+        <image name="logout" width="300" height="300"/>
         <image name="settings.png" width="128" height="128"/>
         <image name="swarm.png" width="512" height="512"/>
         <image name="tumblr.png" width="512" height="512"/>
         <image name="twitter.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VVr-rZ-yAf"/>
+        <segue reference="hrV-wj-Azc"/>
     </inferredMetricsTieBreakers>
 </document>
