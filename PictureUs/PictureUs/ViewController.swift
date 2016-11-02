@@ -201,6 +201,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
     }
     
+    /**
+    sharing image with weibo
+ **/
     func shareImageWithWeibo() {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTencentWeibo){
             let weiboSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTencentWeibo)
