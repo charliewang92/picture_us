@@ -35,6 +35,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     let picker = UIImagePickerController()
     var phoneNumber: String!
     
+    //View for the camera overlay, maybe we add a button to take picture instead?
     @IBOutlet var cameraView: UIView!
     @IBOutlet var takeAnotherButton: UIButton!
     
@@ -197,7 +198,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         } else {
             let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+         i    self.present(alert, animated: true, completion: nil)
         }
     }
     
