@@ -10,6 +10,9 @@
 		2A21FA961DB81A2800F75717 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 2A21FA951DB81A2800F75717 /* Assets */; };
 		2A21FA981DB81AB200F75717 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A21FA971DB81AB200F75717 /* Launch Screen.storyboard */; };
 		2AC872081DB429E300125403 /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AC872071DB429E300125403 /* Logo.jpg */; };
+		CB1336C51DD42D85004B7B9F /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1336C41DD42D85004B7B9F /* UserSettings.storyboard */; };
+		CB1336CA1DD44758004B7B9F /* DemoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1336C91DD44758004B7B9F /* DemoFeature.swift */; };
+		CB1336CD1DD449FB004B7B9F /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1336CC1DD449FB004B7B9F /* UserSettingsViewController.swift */; };
 		CB228FB71D96112F00F7956E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB228FB61D96112F00F7956E /* AppDelegate.swift */; };
 		CB228FB91D96112F00F7956E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB228FB81D96112F00F7956E /* ViewController.swift */; };
 		CB228FBC1D96112F00F7956E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB228FBA1D96112F00F7956E /* Main.storyboard */; };
@@ -110,6 +113,9 @@
 		2A21FA951DB81A2800F75717 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		2A21FA971DB81AB200F75717 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2AC872071DB429E300125403 /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
+		CB1336C41DD42D85004B7B9F /* UserSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserSettings.storyboard; sourceTree = "<group>"; };
+		CB1336C91DD44758004B7B9F /* DemoFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoFeature.swift; sourceTree = "<group>"; };
+		CB1336CC1DD449FB004B7B9F /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		CB228FB31D96112F00F7956E /* Swiper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB228FB61D96112F00F7956E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB228FB81D96112F00F7956E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -218,9 +224,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB1336C81DD4474C004B7B9F /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				CB1336C91DD44758004B7B9F /* DemoFeature.swift */,
+				CB1336CB1DD448A0004B7B9F /* NoSQL */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		CB1336CB1DD448A0004B7B9F /* NoSQL */ = {
+			isa = PBXGroup;
+			children = (
+				CB1336C41DD42D85004B7B9F /* UserSettings.storyboard */,
+				CB1336CC1DD449FB004B7B9F /* UserSettingsViewController.swift */,
+			);
+			name = NoSQL;
+			sourceTree = "<group>";
+		};
 		CB228FAA1D96112F00F7956E = {
 			isa = PBXGroup;
 			children = (
+				CB1336C81DD4474C004B7B9F /* Demo */,
 				CB2992691DC40B9800C1530B /* AWSCore.framework */,
 				CB29926A1DC40B9800C1530B /* AWSDynamoDB.framework */,
 				CBF75C391DC0225700459260 /* UpArrow.png */,
@@ -503,6 +528,7 @@
 				CBF75C341DBFF41200459260 /* DownArrow.png in Resources */,
 				CBB8FD491DC03D0A0030EDFC /* chat.png in Resources */,
 				CBF75C321DBFF33400459260 /* RightArrow_Social.png in Resources */,
+				CB1336C51DD42D85004B7B9F /* UserSettings.storyboard in Resources */,
 				CBB8FD6A1DC03D9E0030EDFC /* swarm.png in Resources */,
 				CBB8FD3D1DC039DE0030EDFC /* UpArrow_Plain.png in Resources */,
 				CBB8FD411DC039EE0030EDFC /* left-arrow.png in Resources */,
@@ -562,8 +588,10 @@
 				CB2992831DC4127500C1530B /* UserIdentityAccess.swift in Sources */,
 				CB228FB91D96112F00F7956E /* ViewController.swift in Sources */,
 				CB228FB71D96112F00F7956E /* AppDelegate.swift in Sources */,
+				CB1336CD1DD449FB004B7B9F /* UserSettingsViewController.swift in Sources */,
 				CB2992771DC40C2500C1530B /* AWSMobileClient.swift in Sources */,
 				CB2992791DC40C2500C1530B /* PictureUsUserSetting1.swift in Sources */,
+				CB1336CA1DD44758004B7B9F /* DemoFeature.swift in Sources */,
 				CBB8FD3B1DC034D80030EDFC /* settingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

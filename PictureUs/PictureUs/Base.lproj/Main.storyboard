@@ -8,7 +8,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swiper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -45,6 +44,14 @@
                                 </state>
                                 <connections>
                                     <segue destination="Fps-U8-7wi" kind="show" id="rB9-cX-XRi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWU-eP-nHv">
+                                <frame key="frameInset" minX="164" minY="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendToUserSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yCV-2q-aze"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RightArrow_Social.png" translatesAutoresizingMaskIntoConstraints="NO" id="RWY-JO-8zI">
@@ -85,8 +92,10 @@
                         <outlet property="settingPageButton" destination="Vkp-zH-ndE" id="PW0-im-60l"/>
                         <outlet property="takeAnotherButton" destination="vM1-0X-MeQ" id="ds5-uk-btA"/>
                         <outlet property="upArrow" destination="DGd-pR-E4E" id="BHY-wT-VLc"/>
+                        <outlet property="userSettingsButton" destination="ZWU-eP-nHv" id="t6V-60-eyR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1263.2" y="398.95052473763121"/>
         </scene>
@@ -292,7 +301,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oZ4-EH-xeD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KXu-5Q-gjl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KXu-5Q-gjl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -308,7 +317,6 @@
         <!--Sign In View Controller-->
         <scene sceneID="Wya-vk-4S1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QeO-8h-tVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="g4M-qo-Hs4" customClass="SignInViewController" customModule="Swiper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ETy-bs-P90"/>
@@ -328,7 +336,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfd-KL-YvH">
                                 <frame key="frameInset" minX="46" minY="189" width="294" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="AF97199A-34F2-479B-9C0A-991A58D3D5B4"/>
+                                <state key="normal" title="Button" image="34DC5203-1153-4915-9633-6089E34B6820"/>
                                 <connections>
                                     <action selector="googleButton:" destination="g4M-qo-Hs4" eventType="touchUpInside" id="gWe-jU-35M"/>
                                 </connections>
@@ -346,12 +354,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="iZx-Sb-0Rq"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QeO-8h-tVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="576.79999999999995" y="-29.23538230884558"/>
         </scene>
     </scenes>
     <resources>
-        <image name="AF97199A-34F2-479B-9C0A-991A58D3D5B4" width="240" height="37">
+        <image name="34DC5203-1153-4915-9633-6089E34B6820" width="240" height="37">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1019,6 +1028,6 @@ vgDDANoA3ADelECURZRQlFmUbJRwlHuUhJSJlJGUlJSZlKiUrJSzlLuUyJTNlM+U0ZTWlN6U4ZTmlO6U
         <image name="twitter.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hrV-wj-Azc"/>
+        <segue reference="VVr-rZ-yAf"/>
     </inferredMetricsTieBreakers>
 </document>
