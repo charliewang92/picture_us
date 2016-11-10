@@ -40,6 +40,7 @@ class UserSettingsViewController: UIViewController {
         getTableRow()
     }
     
+    //Insert users
     func insertSettings() {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let uset = PictureUsUserSetting1()
@@ -71,6 +72,7 @@ class UserSettingsViewController: UIViewController {
         //getTableRow()   //test get
 
     }
+    //GET data
     func getTableRow() {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         

@@ -15,6 +15,7 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
+//The model that is currently present in AWS DyanmoDB
 class PictureUsUserSetting1: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
