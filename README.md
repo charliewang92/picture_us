@@ -27,3 +27,6 @@ Photo sharing made easier.
 ##### 10/31/2016 - App now allows for log out.
 ##### 11/1/2016 - Added App sign in view controller background.
 ##### 11/1/2016 - Added Facebook button and cleaned up code.
+##### 11/9/2016 - Integrated NoSQL support to insert and retrieve UserSettings
+##### 11/9/2016 - Integrated AWSDynamoDB framework into app
+##### 11/9/2016 - Added UserSettings Storyboard, may not need this in the future
