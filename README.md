@@ -30,3 +30,5 @@ Photo sharing made easier.
 ##### 11/9/2016 - Integrated NoSQL support to insert and retrieve UserSettings
 ##### 11/9/2016 - Integrated AWSDynamoDB framework into app
 ##### 11/9/2016 - Added UserSettings Storyboard, may not need this in the future
+##### 11/11/2016 - Integrated Facebook login
+##### 11/11/2016 - Updated AWS with Swiper app rather than pictureUs 
