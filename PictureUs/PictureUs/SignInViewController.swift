@@ -27,13 +27,12 @@ class SignInViewController: UIViewController {
         // Sets up the view controller that the Google signin will be launched from.
         AWSGoogleSignInProvider.sharedInstance().setScopes(["profile", "openid"])
         AWSGoogleSignInProvider.sharedInstance().setViewControllerForGoogleSignIn(self)
+        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"]);
     
     }
     
     @IBAction func facebookButton(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Sign In", message: "Facebook Sign In Not Yet Supported!", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        handleFacebookLogin()
     }
     
     @IBAction func googleButton(_ sender: AnyObject) {
@@ -52,6 +51,7 @@ class SignInViewController: UIViewController {
         AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider, completionHandler: {(result: Any?, error: Error?) -> Void in
             // If no error reported by SignInProvider, discard the sign-in view controller.
             if error == nil {
+                print ("got in here after facebook?")
                 DispatchQueue.main.async(execute: {
                     self.dismiss(animated: true, completion: nil)
                 })
@@ -59,7 +59,15 @@ class SignInViewController: UIViewController {
             print("result = \(result), error = \(error)")
         })
     }
+    
     func handleGoogleLogin() {
         handleLoginWithSignInProvider(signInProvider: AWSGoogleSignInProvider.sharedInstance())
     }
+    
+    func handleFacebookLogin() {
+        // Facebook login permissions can be optionally set, but must be set
+        // before user authenticates.
+        handleLoginWithSignInProvider(signInProvider: AWSFacebookSignInProvider.sharedInstance())
+    }
+    
 }

@@ -2,6 +2,31 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FacebookAppID</key>
+	<string>322737374776459</string>
+	<key>FacebookDisplayName</key>
+	<string>Swiper</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string></string>
+			<key>CFBundleURLName</key>
+			<string>com.amazon.MySampleApp</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1044729210744-28rkjvfod252n4unnjjit6dhhes31i5s</string>
+				<string>fb322737374776459</string>
+			</array>
+		</dict>
+	</array>
 	<key>AWS</key>
 	<dict>
 		<key>IdentityManager</key>
@@ -33,14 +58,14 @@
 			<key>ProjectClientId</key>
 			<string>MobileHub 1068257d-22ce-40f6-b34a-55f3d1b45891 aws-my-sample-app-ios-swift-v0.4</string>
 		</dict>
-        <key>DynamoDBObjectMapper</key>
-        <dict>
-            <key>Default</key>
-            <dict>
-                <key>Region</key>
-                <string>us-west-2</string>
-            </dict>
-        </dict>
+		<key>DynamoDBObjectMapper</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Region</key>
+				<string>us-west-2</string>
+			</dict>
+		</dict>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -48,20 +73,6 @@
 	<string>Swiper</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string></string>
-			<key>CFBundleURLName</key>
-			<string>com.amazon.MySampleApp</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.1044729210744-28rkjvfod252n4unnjjit6dhhes31i5s</string>
-				<string>com.amazon.mysampleapp</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleIcons</key>
 	<dict/>
 	<key>CFBundleIcons~ipad</key>

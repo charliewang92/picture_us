@@ -32,7 +32,7 @@
                                 <frame key="frameInset" minX="67" minY="567" width="241" height="80"/>
                                 <state key="normal" image="FacebookLoginButton240"/>
                                 <connections>
-                                    <action selector="facebookButton:" destination="Xuk-sV-Hhu" eventType="touchUpInside" id="dxD-lg-f0L"/>
+                                    <action selector="facebookButton:" destination="Xuk-sV-Hhu" eventType="touchUpInside" id="d8H-YI-006"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekD-74-y1I" userLabel="Google Sign-in Button">
