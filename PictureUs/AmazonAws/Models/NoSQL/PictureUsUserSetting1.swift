@@ -15,6 +15,7 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
+//Test aws mobile settings
 //The model that is currently present in AWS DyanmoDB
 class PictureUsUserSetting1: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
