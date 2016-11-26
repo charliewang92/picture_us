@@ -31,4 +31,13 @@ Photo sharing made easier.
 ##### 11/9/2016 - Integrated AWSDynamoDB framework into app
 ##### 11/9/2016 - Added UserSettings Storyboard, may not need this in the future
 ##### 11/11/2016 - Integrated Facebook login
-##### 11/11/2016 - Updated AWS with Swiper app rather than pictureUs 
+##### 11/11/2016 - Updated AWS with Swiper app rather than pictureUs
+##### 11/17/2016 - Plans to switching over to Swiper app for better UI layout
+##### 11/18/2016 - Integrated navigation bar with the main UI
+##### 11/19/2016 - Integrated segue through all of the UI for the app
+##### 11/20/2016 - Integrated AWS fully with new swiper app
+##### 11/24/2016 - Fully integrated Swiper App with all features
+##### 11/25/2016 - Integrated scroll view so users can select all media
+##### 11/26/2016 - Integrated scroll view with AWS so users can dynamically fetch their social media platforms
+##### 11/27/2016 - Integrate social media calls with dyanmoDB
+
