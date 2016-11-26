@@ -2,7 +2,7 @@
 //  LogoutViewController.swift
 //  Swiper
 //
-//  Created by Charlie Wang on 11/24/16.
+//  Created by 李秦琦 and Charlie Wang  on 11/24/16.
 //  Copyright © 2016 BookishParakeet. All rights reserved.
 //
 

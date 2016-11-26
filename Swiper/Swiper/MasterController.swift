@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Swiper
 //
-//  Created by 李秦琦 on 11/13/16.
+//  Created by 李秦琦 and Charlie Wang  on 11/13/16.
 //  Copyright © 2016 BookishParakeet. All rights reserved.
 //
 
