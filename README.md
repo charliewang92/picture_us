@@ -39,5 +39,5 @@ Photo sharing made easier.
 ##### 11/24/2016 - Fully integrated Swiper App with all features
 ##### 11/25/2016 - Integrated scroll view so users can select all media
 ##### 11/26/2016 - Integrated scroll view with AWS so users can dynamically fetch their social media platforms
-##### 11/27/2016 - Integrate social media calls with dyanmoDB
-
+##### 11/26/2016 - Integrate social media calls with dyanmoDB
+##### 11/26/2016 - We have an end to end user experience with swiper, need testing and further feature implementation
