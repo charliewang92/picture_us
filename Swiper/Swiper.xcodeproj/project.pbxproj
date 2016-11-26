@@ -1,0 +1,762 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A5D52FB1DD920C6002C0377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D52FA1DD920C6002C0377 /* AppDelegate.swift */; };
+		2A5D52FD1DD920C6002C0377 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D52FC1DD920C6002C0377 /* MasterController.swift */; };
+		2A5D53001DD920C6002C0377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5D52FE1DD920C6002C0377 /* Main.storyboard */; };
+		2A5D53021DD920C6002C0377 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5D53011DD920C6002C0377 /* Assets.xcassets */; };
+		2A5D53051DD920C6002C0377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5D53031DD920C6002C0377 /* LaunchScreen.storyboard */; };
+		2A5D53101DD920C6002C0377 /* SwiperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D530F1DD920C6002C0377 /* SwiperTests.swift */; };
+		2A5D531B1DD920C6002C0377 /* SwiperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D531A1DD920C6002C0377 /* SwiperUITests.swift */; };
+		2A5D53291DD92473002C0377 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D53281DD92473002C0377 /* SettingController.swift */; };
+		2A6D7CB01DD9881C006B5A94 /* GestureDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */; };
+		2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C36851DDFBF5900D759BD /* CameraController.swift */; };
+		CB5449B21DE543A0001251CC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5449B11DE543A0001251CC /* SignInController.swift */; };
+		CB83153E1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB83153D1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift */; };
+		CBABA3BB1DE7F75D007752EC /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBABA3BA1DE7F75D007752EC /* SignIn.storyboard */; };
+		CBABA3C11DE80834007752EC /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABA3C01DE80834007752EC /* LogoutViewController.swift */; };
+		CBFCFA741DE7D72A00D51F74 /* Sdk in Resources */ = {isa = PBXBuildFile; fileRef = CBFCFA731DE7D72A00D51F74 /* Sdk */; };
+		CBFCFA781DE7D78600D51F74 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA761DE7D78600D51F74 /* AWSCore.framework */; };
+		CBFCFA791DE7D78600D51F74 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA761DE7D78600D51F74 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBFCFA7A1DE7D78600D51F74 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA771DE7D78600D51F74 /* AWSDynamoDB.framework */; };
+		CBFCFA7B1DE7D78600D51F74 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA771DE7D78600D51F74 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBFCFA841DE7D82900D51F74 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCFA7F1DE7D82900D51F74 /* AWSMobileClient.swift */; };
+		CBFCFA851DE7D82900D51F74 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCFA7F1DE7D82900D51F74 /* AWSMobileClient.swift */; };
+		CBFCFA861DE7D82900D51F74 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA801DE7D82900D51F74 /* AWSMobileHubHelper.framework */; };
+		CBFCFA871DE7D82900D51F74 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA801DE7D82900D51F74 /* AWSMobileHubHelper.framework */; };
+		CBFCFA881DE7D82900D51F74 /* PictureUsUserSetting1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCFA831DE7D82900D51F74 /* PictureUsUserSetting1.swift */; };
+		CBFCFA891DE7D82900D51F74 /* PictureUsUserSetting1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCFA831DE7D82900D51F74 /* PictureUsUserSetting1.swift */; };
+		CBFCFA8C1DE7D8B800D51F74 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA8B1DE7D8B800D51F74 /* libsqlite3.tbd */; };
+		CBFCFA8E1DE7D8C300D51F74 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA8D1DE7D8C300D51F74 /* libz.tbd */; };
+		CBFCFA961DE7D98200D51F74 /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA8F1DE7D98200D51F74 /* GoogleAppUtilities.framework */; };
+		CBFCFA971DE7D98200D51F74 /* GoogleAuthUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA901DE7D98200D51F74 /* GoogleAuthUtilities.framework */; };
+		CBFCFA981DE7D98200D51F74 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA911DE7D98200D51F74 /* GoogleNetworkingUtilities.framework */; };
+		CBFCFA991DE7D98200D51F74 /* GoogleSignIn.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA921DE7D98200D51F74 /* GoogleSignIn.bundle */; };
+		CBFCFA9A1DE7D98200D51F74 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA931DE7D98200D51F74 /* GoogleSignIn.framework */; };
+		CBFCFA9B1DE7D98200D51F74 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA941DE7D98200D51F74 /* GoogleSymbolUtilities.framework */; };
+		CBFCFA9C1DE7D98200D51F74 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA951DE7D98200D51F74 /* GoogleUtilities.framework */; };
+		CBFCFA9E1DE7D9CB00D51F74 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA9D1DE7D9CB00D51F74 /* AddressBook.framework */; };
+		CBFCFAA01DE7D9D400D51F74 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA9F1DE7D9D400D51F74 /* SafariServices.framework */; };
+		CBFCFAA21DE7D9DB00D51F74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFAA11DE7D9DB00D51F74 /* SystemConfiguration.framework */; };
+		CBFCFAA51DE7D9F200D51F74 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFAA31DE7D9F200D51F74 /* FBSDKCoreKit.framework */; };
+		CBFCFAA61DE7D9F200D51F74 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFAA41DE7D9F200D51F74 /* FBSDKLoginKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A5D530C1DD920C6002C0377 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A5D52EF1DD920C6002C0377 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A5D52F61DD920C6002C0377;
+			remoteInfo = Swiper;
+		};
+		2A5D53171DD920C6002C0377 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A5D52EF1DD920C6002C0377 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A5D52F61DD920C6002C0377;
+			remoteInfo = Swiper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CBFCFA7C1DE7D78700D51F74 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CBFCFA7B1DE7D78600D51F74 /* AWSDynamoDB.framework in Embed Frameworks */,
+				CBFCFA791DE7D78600D51F74 /* AWSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A5D52F71DD920C6002C0377 /* Swiper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5D52FA1DD920C6002C0377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A5D52FC1DD920C6002C0377 /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
+		2A5D52FF1DD920C6002C0377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A5D53011DD920C6002C0377 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A5D53041DD920C6002C0377 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A5D53061DD920C6002C0377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A5D530B1DD920C6002C0377 /* SwiperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5D530F1DD920C6002C0377 /* SwiperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiperTests.swift; sourceTree = "<group>"; };
+		2A5D53111DD920C6002C0377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A5D53161DD920C6002C0377 /* SwiperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5D531A1DD920C6002C0377 /* SwiperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiperUITests.swift; sourceTree = "<group>"; };
+		2A5D531C1DD920C6002C0377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A5D53281DD92473002C0377 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDetailsController.swift; sourceTree = "<group>"; };
+		2A8C36851DDFBF5900D759BD /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		CB5449B11DE543A0001251CC /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		CB83153D1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSwipeDirectionViewController.swift; sourceTree = "<group>"; };
+		CBABA3BA1DE7F75D007752EC /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		CBABA3C01DE80834007752EC /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		CBFCFA731DE7D72A00D51F74 /* Sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sdk; sourceTree = "<group>"; };
+		CBFCFA751DE7D76D00D51F74 /* Aws */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Aws; path = Sdk/Aws; sourceTree = "<group>"; };
+		CBFCFA761DE7D78600D51F74 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
+		CBFCFA771DE7D78600D51F74 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = Sdk/Aws/AWSDynamoDB.framework; sourceTree = "<group>"; };
+		CBFCFA7F1DE7D82900D51F74 /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+		CBFCFA801DE7D82900D51F74 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		CBFCFA831DE7D82900D51F74 /* PictureUsUserSetting1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureUsUserSetting1.swift; sourceTree = "<group>"; };
+		CBFCFA8B1DE7D8B800D51F74 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CBFCFA8D1DE7D8C300D51F74 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CBFCFA8F1DE7D98200D51F74 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppUtilities.framework; path = Sdk/Google/GoogleAppUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA901DE7D98200D51F74 /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAuthUtilities.framework; path = Sdk/Google/GoogleAuthUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA911DE7D98200D51F74 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Sdk/Google/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA921DE7D98200D51F74 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Sdk/Google/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		CBFCFA931DE7D98200D51F74 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Sdk/Google/GoogleSignIn.framework; sourceTree = "<group>"; };
+		CBFCFA941DE7D98200D51F74 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Sdk/Google/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA951DE7D98200D51F74 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Sdk/Google/GoogleUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA9D1DE7D9CB00D51F74 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		CBFCFA9F1DE7D9D400D51F74 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		CBFCFAA11DE7D9DB00D51F74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CBFCFAA31DE7D9F200D51F74 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Sdk/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		CBFCFAA41DE7D9F200D51F74 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Sdk/Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A5D52F41DD920C6002C0377 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFCFAA51DE7D9F200D51F74 /* FBSDKCoreKit.framework in Frameworks */,
+				CBFCFAA61DE7D9F200D51F74 /* FBSDKLoginKit.framework in Frameworks */,
+				CBFCFAA21DE7D9DB00D51F74 /* SystemConfiguration.framework in Frameworks */,
+				CBFCFAA01DE7D9D400D51F74 /* SafariServices.framework in Frameworks */,
+				CBFCFA9E1DE7D9CB00D51F74 /* AddressBook.framework in Frameworks */,
+				CBFCFA961DE7D98200D51F74 /* GoogleAppUtilities.framework in Frameworks */,
+				CBFCFA971DE7D98200D51F74 /* GoogleAuthUtilities.framework in Frameworks */,
+				CBFCFA981DE7D98200D51F74 /* GoogleNetworkingUtilities.framework in Frameworks */,
+				CBFCFA991DE7D98200D51F74 /* GoogleSignIn.bundle in Frameworks */,
+				CBFCFA9A1DE7D98200D51F74 /* GoogleSignIn.framework in Frameworks */,
+				CBFCFA9B1DE7D98200D51F74 /* GoogleSymbolUtilities.framework in Frameworks */,
+				CBFCFA9C1DE7D98200D51F74 /* GoogleUtilities.framework in Frameworks */,
+				CBFCFA8E1DE7D8C300D51F74 /* libz.tbd in Frameworks */,
+				CBFCFA8C1DE7D8B800D51F74 /* libsqlite3.tbd in Frameworks */,
+				CBFCFA7A1DE7D78600D51F74 /* AWSDynamoDB.framework in Frameworks */,
+				CBFCFA781DE7D78600D51F74 /* AWSCore.framework in Frameworks */,
+				CBFCFA861DE7D82900D51F74 /* AWSMobileHubHelper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5D53081DD920C6002C0377 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFCFA871DE7D82900D51F74 /* AWSMobileHubHelper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5D53131DD920C6002C0377 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A5D52EE1DD920C6002C0377 = {
+			isa = PBXGroup;
+			children = (
+				CBFCFA761DE7D78600D51F74 /* AWSCore.framework */,
+				CBFCFA771DE7D78600D51F74 /* AWSDynamoDB.framework */,
+				CBFCFA751DE7D76D00D51F74 /* Aws */,
+				2A5D52F91DD920C6002C0377 /* Swiper */,
+				2A5D530E1DD920C6002C0377 /* SwiperTests */,
+				CBFCFA7E1DE7D82900D51F74 /* AmazonAws */,
+				2A5D53191DD920C6002C0377 /* SwiperUITests */,
+				2A5D52F81DD920C6002C0377 /* Products */,
+				CBFCFA731DE7D72A00D51F74 /* Sdk */,
+				CBFCFA8A1DE7D8B800D51F74 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2A5D52F81DD920C6002C0377 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A5D52F71DD920C6002C0377 /* Swiper.app */,
+				2A5D530B1DD920C6002C0377 /* SwiperTests.xctest */,
+				2A5D53161DD920C6002C0377 /* SwiperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A5D52F91DD920C6002C0377 /* Swiper */ = {
+			isa = PBXGroup;
+			children = (
+				2A5D52FA1DD920C6002C0377 /* AppDelegate.swift */,
+				2A5D52FC1DD920C6002C0377 /* MasterController.swift */,
+				2A5D53281DD92473002C0377 /* SettingController.swift */,
+				2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */,
+				CB83153D1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift */,
+				2A8C36851DDFBF5900D759BD /* CameraController.swift */,
+				2A5D52FE1DD920C6002C0377 /* Main.storyboard */,
+				2A5D53011DD920C6002C0377 /* Assets.xcassets */,
+				CBABA3C01DE80834007752EC /* LogoutViewController.swift */,
+				2A5D53031DD920C6002C0377 /* LaunchScreen.storyboard */,
+				2A5D53061DD920C6002C0377 /* Info.plist */,
+				CB5449B11DE543A0001251CC /* SignInController.swift */,
+				CBABA3BA1DE7F75D007752EC /* SignIn.storyboard */,
+			);
+			path = Swiper;
+			sourceTree = "<group>";
+		};
+		2A5D530E1DD920C6002C0377 /* SwiperTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A5D530F1DD920C6002C0377 /* SwiperTests.swift */,
+				2A5D53111DD920C6002C0377 /* Info.plist */,
+			);
+			path = SwiperTests;
+			sourceTree = "<group>";
+		};
+		2A5D53191DD920C6002C0377 /* SwiperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A5D531A1DD920C6002C0377 /* SwiperUITests.swift */,
+				2A5D531C1DD920C6002C0377 /* Info.plist */,
+			);
+			path = SwiperUITests;
+			sourceTree = "<group>";
+		};
+		CBFCFA7E1DE7D82900D51F74 /* AmazonAws */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCFA7F1DE7D82900D51F74 /* AWSMobileClient.swift */,
+				CBFCFA801DE7D82900D51F74 /* AWSMobileHubHelper.framework */,
+				CBFCFA811DE7D82900D51F74 /* Models */,
+			);
+			name = AmazonAws;
+			path = SwiperTests/AmazonAws;
+			sourceTree = "<group>";
+		};
+		CBFCFA811DE7D82900D51F74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCFA821DE7D82900D51F74 /* NoSQL */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CBFCFA821DE7D82900D51F74 /* NoSQL */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCFA831DE7D82900D51F74 /* PictureUsUserSetting1.swift */,
+			);
+			path = NoSQL;
+			sourceTree = "<group>";
+		};
+		CBFCFA8A1DE7D8B800D51F74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCFAA31DE7D9F200D51F74 /* FBSDKCoreKit.framework */,
+				CBFCFAA41DE7D9F200D51F74 /* FBSDKLoginKit.framework */,
+				CBFCFAA11DE7D9DB00D51F74 /* SystemConfiguration.framework */,
+				CBFCFA9F1DE7D9D400D51F74 /* SafariServices.framework */,
+				CBFCFA9D1DE7D9CB00D51F74 /* AddressBook.framework */,
+				CBFCFA8F1DE7D98200D51F74 /* GoogleAppUtilities.framework */,
+				CBFCFA901DE7D98200D51F74 /* GoogleAuthUtilities.framework */,
+				CBFCFA911DE7D98200D51F74 /* GoogleNetworkingUtilities.framework */,
+				CBFCFA921DE7D98200D51F74 /* GoogleSignIn.bundle */,
+				CBFCFA931DE7D98200D51F74 /* GoogleSignIn.framework */,
+				CBFCFA941DE7D98200D51F74 /* GoogleSymbolUtilities.framework */,
+				CBFCFA951DE7D98200D51F74 /* GoogleUtilities.framework */,
+				CBFCFA8D1DE7D8C300D51F74 /* libz.tbd */,
+				CBFCFA8B1DE7D8B800D51F74 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A5D52F61DD920C6002C0377 /* Swiper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5D531F1DD920C6002C0377 /* Build configuration list for PBXNativeTarget "Swiper" */;
+			buildPhases = (
+				2A5D52F31DD920C6002C0377 /* Sources */,
+				2A5D52F41DD920C6002C0377 /* Frameworks */,
+				2A5D52F51DD920C6002C0377 /* Resources */,
+				CBFCFA7C1DE7D78700D51F74 /* Embed Frameworks */,
+				CBFCFA7D1DE7D7B300D51F74 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Swiper;
+			productName = Swiper;
+			productReference = 2A5D52F71DD920C6002C0377 /* Swiper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A5D530A1DD920C6002C0377 /* SwiperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5D53221DD920C6002C0377 /* Build configuration list for PBXNativeTarget "SwiperTests" */;
+			buildPhases = (
+				2A5D53071DD920C6002C0377 /* Sources */,
+				2A5D53081DD920C6002C0377 /* Frameworks */,
+				2A5D53091DD920C6002C0377 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A5D530D1DD920C6002C0377 /* PBXTargetDependency */,
+			);
+			name = SwiperTests;
+			productName = SwiperTests;
+			productReference = 2A5D530B1DD920C6002C0377 /* SwiperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A5D53151DD920C6002C0377 /* SwiperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5D53251DD920C6002C0377 /* Build configuration list for PBXNativeTarget "SwiperUITests" */;
+			buildPhases = (
+				2A5D53121DD920C6002C0377 /* Sources */,
+				2A5D53131DD920C6002C0377 /* Frameworks */,
+				2A5D53141DD920C6002C0377 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A5D53181DD920C6002C0377 /* PBXTargetDependency */,
+			);
+			name = SwiperUITests;
+			productName = SwiperUITests;
+			productReference = 2A5D53161DD920C6002C0377 /* SwiperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A5D52EF1DD920C6002C0377 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = BookishParakeet;
+				TargetAttributes = {
+					2A5D52F61DD920C6002C0377 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = WPS3Y6MWD7;
+						ProvisioningStyle = Automatic;
+					};
+					2A5D530A1DD920C6002C0377 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2A5D52F61DD920C6002C0377;
+					};
+					2A5D53151DD920C6002C0377 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2A5D52F61DD920C6002C0377;
+					};
+				};
+			};
+			buildConfigurationList = 2A5D52F21DD920C6002C0377 /* Build configuration list for PBXProject "Swiper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A5D52EE1DD920C6002C0377;
+			productRefGroup = 2A5D52F81DD920C6002C0377 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A5D52F61DD920C6002C0377 /* Swiper */,
+				2A5D530A1DD920C6002C0377 /* SwiperTests */,
+				2A5D53151DD920C6002C0377 /* SwiperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A5D52F51DD920C6002C0377 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5D53051DD920C6002C0377 /* LaunchScreen.storyboard in Resources */,
+				CBABA3BB1DE7F75D007752EC /* SignIn.storyboard in Resources */,
+				CBFCFA741DE7D72A00D51F74 /* Sdk in Resources */,
+				2A5D53021DD920C6002C0377 /* Assets.xcassets in Resources */,
+				2A5D53001DD920C6002C0377 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5D53091DD920C6002C0377 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5D53141DD920C6002C0377 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CBFCFA7D1DE7D7B300D51F74 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A5D52F31DD920C6002C0377 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFCFA881DE7D82900D51F74 /* PictureUsUserSetting1.swift in Sources */,
+				2A5D53291DD92473002C0377 /* SettingController.swift in Sources */,
+				2A6D7CB01DD9881C006B5A94 /* GestureDetailsController.swift in Sources */,
+				CBFCFA841DE7D82900D51F74 /* AWSMobileClient.swift in Sources */,
+				2A5D52FD1DD920C6002C0377 /* MasterController.swift in Sources */,
+				CB5449B21DE543A0001251CC /* SignInController.swift in Sources */,
+				2A5D52FB1DD920C6002C0377 /* AppDelegate.swift in Sources */,
+				CB83153E1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift in Sources */,
+				CBABA3C11DE80834007752EC /* LogoutViewController.swift in Sources */,
+				2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5D53071DD920C6002C0377 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFCFA851DE7D82900D51F74 /* AWSMobileClient.swift in Sources */,
+				2A5D53101DD920C6002C0377 /* SwiperTests.swift in Sources */,
+				CBFCFA891DE7D82900D51F74 /* PictureUsUserSetting1.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5D53121DD920C6002C0377 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5D531B1DD920C6002C0377 /* SwiperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A5D530D1DD920C6002C0377 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A5D52F61DD920C6002C0377 /* Swiper */;
+			targetProxy = 2A5D530C1DD920C6002C0377 /* PBXContainerItemProxy */;
+		};
+		2A5D53181DD920C6002C0377 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A5D52F61DD920C6002C0377 /* Swiper */;
+			targetProxy = 2A5D53171DD920C6002C0377 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A5D52FE1DD920C6002C0377 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A5D52FF1DD920C6002C0377 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2A5D53031DD920C6002C0377 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A5D53041DD920C6002C0377 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A5D531D1DD920C6002C0377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A5D531E1DD920C6002C0377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A5D53201DD920C6002C0377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WPS3Y6MWD7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/SwiperTests/AmazonAws",
+					"$(PROJECT_DIR)/Sdk/Google",
+					"$(PROJECT_DIR)/Sdk/Facebook",
+				);
+				INFOPLIST_FILE = Swiper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleUtilities.framework/GoogleUtilities",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleSignIn.framework/GoogleSignIn",
+					"$(inherited)",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKLoginKit.framework/FBSDKLoginKit",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKCoreKit.framework/FBSDKCoreKit",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2A5D53211DD920C6002C0377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WPS3Y6MWD7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/SwiperTests/AmazonAws",
+					"$(PROJECT_DIR)/Sdk/Google",
+					"$(PROJECT_DIR)/Sdk/Facebook",
+				);
+				INFOPLIST_FILE = Swiper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleUtilities.framework/GoogleUtilities",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleSignIn.framework/GoogleSignIn",
+					"$(inherited)",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKLoginKit.framework/FBSDKLoginKit",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKCoreKit.framework/FBSDKCoreKit",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2A5D53231DD920C6002C0377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiperTests/AmazonAws",
+				);
+				INFOPLIST_FILE = SwiperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.SwiperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiper.app/Swiper";
+			};
+			name = Debug;
+		};
+		2A5D53241DD920C6002C0377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiperTests/AmazonAws",
+				);
+				INFOPLIST_FILE = SwiperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.SwiperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiper.app/Swiper";
+			};
+			name = Release;
+		};
+		2A5D53261DD920C6002C0377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SwiperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.SwiperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Swiper;
+			};
+			name = Debug;
+		};
+		2A5D53271DD920C6002C0377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SwiperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.SwiperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Swiper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A5D52F21DD920C6002C0377 /* Build configuration list for PBXProject "Swiper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5D531D1DD920C6002C0377 /* Debug */,
+				2A5D531E1DD920C6002C0377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5D531F1DD920C6002C0377 /* Build configuration list for PBXNativeTarget "Swiper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5D53201DD920C6002C0377 /* Debug */,
+				2A5D53211DD920C6002C0377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5D53221DD920C6002C0377 /* Build configuration list for PBXNativeTarget "SwiperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5D53231DD920C6002C0377 /* Debug */,
+				2A5D53241DD920C6002C0377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5D53251DD920C6002C0377 /* Build configuration list for PBXNativeTarget "SwiperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5D53261DD920C6002C0377 /* Debug */,
+				2A5D53271DD920C6002C0377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A5D52EF1DD920C6002C0377 /* Project object */;
+}
