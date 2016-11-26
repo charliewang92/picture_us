@@ -36,6 +36,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var rightImage: UIImageView!
     @IBOutlet var upImage: UIImageView!
     @IBOutlet var downImage: UIImageView!
+    //Global var to bypass the initial google signin
     var firstLogin = true
 
     let socialMediaTypes = [
@@ -72,24 +73,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         rightRecognizer.direction = UISwipeGestureRecognizerDirection.right
         self.view?.addGestureRecognizer(rightRecognizer)
     }
-    
-    func handleRight() {
-        shareImageWithTwitter()
-    }
-    
-    func handleLeft() {
-        shareImageWithFacebook()
-    }
-    
-    func handleDown() {
-        sendImageMessage()
-    }
-    
-    func handleUp() {
-        shareImageWithWeibo()
-    }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -105,7 +89,93 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         }
         print ("viewdid appear")
         previewLayer?.frame = cameraView.bounds
-
+    }
+    
+    func handleRight() {
+        handleShareMedia(direction:"right")
+    }
+    
+    func handleLeft() {
+        handleShareMedia(direction:"left")
+    }
+    
+    func handleDown() {
+        handleShareMedia(direction:"down")
+    }
+    
+    func handleUp() {
+        handleShareMedia(direction:"up")
+    }
+    
+    func handleShareMedia(direction:String!) {
+        if firstLogin == true {
+            shareDefault(direction: direction)
+        } else {
+            shareWithuser(direction: direction)
+        }
+    }
+    
+    //This is to make sure the user signs in INTO THE APP first before they try to share anything 
+    //Otherwise app crashes because it tries to make AWS calls without the user signing in with facebook or google
+    func shareDefault(direction: String!) {
+        if direction == "up" {
+            shareImageWithWeibo()
+        } else if direction == "down" {
+            sendImageMessage()
+        } else if direction == "left" {
+            shareImageWithFacebook()
+        } else {
+            shareImageWithTwitter()
+        }
+    }
+    
+    func shareWithuser(direction: String!) {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
+            if (task.error == nil) {
+                if (task.result != nil) {
+                    let tableRow = task.result as! PictureUsUserSetting1
+                    if direction == "up" {
+                        self.shareWithSocialMedia(socialMedia: tableRow._up)
+                    } else if direction == "down" {
+                        self.shareWithSocialMedia(socialMedia: tableRow._down)
+                    } else if direction == "left" {
+                        self.shareWithSocialMedia(socialMedia: tableRow._left)
+                    } else {
+                        self.shareWithSocialMedia(socialMedia: tableRow._right)
+                    }
+                }
+            } else {
+               print ("did not get the direction")
+            }
+            return nil
+        })
+    }
+    
+    func shareWithSocialMedia(socialMedia:String!) {
+        print (socialMedia)
+        if socialMedia == "imessage" {
+            sendImageMessage()
+        } else if socialMedia == "facebook" {
+            shareImageWithFacebook()
+        } else if socialMedia == "twitter" {
+            shareImageWithTwitter()
+        }else if socialMedia == "weibo" {
+            shareImageWithWeibo()
+        }else if socialMedia == "google+" {
+            shareImageWithGoogle()
+        }else if socialMedia == "flickr" {
+            shareImageWithFlickr()
+        }else if socialMedia == "tumblr" {
+            shareImageWithTumblr()
+        }else if socialMedia == "linkedin" {
+            print ("in linkedin!")
+            shareImageWithLinkedIn()
+        }else {
+            let alert = UIAlertController(title: "Swiper", message: "We do not have that social media yet", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func sendImageMessage() {
@@ -144,6 +214,31 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func shareImageWithGoogle() {
+        let alert = UIAlertController(title: "Google+", message: "Google+ integration soon to come!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func shareImageWithFlickr() {
+        let alert = UIAlertController(title: "Flickr", message: "Flickr integration soon to come!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func shareImageWithTumblr() {
+        let alert = UIAlertController(title: "Tumblr", message: "Tumblr integration soon to come!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func shareImageWithLinkedIn() {
+            let alert = UIAlertController(title: "LinkedIn", message: "LinkedIn integration soon to come!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+    }
+    
     
     /**
      sharing image with weibo
