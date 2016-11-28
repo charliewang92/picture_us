@@ -37,6 +37,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var upImage: UIImageView!
     @IBOutlet var downImage: UIImageView!
     //Global var to bypass the initial google signin
+    var FINAL_USED_TO_SEED = false
     var firstLogin = true
 
     let socialMediaTypes = [
@@ -47,14 +48,12 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     let buttonToSocialMedia = [
         0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo"]
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         assignSwipeAction()
         imagePicker.delegate = self
+        phoneNumber = ""
     }
-    
     
     func assignSwipeAction() {
         let upRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CameraController.handleUp))
@@ -81,11 +80,8 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if firstLogin == true {
-            self.setDefaults()
-            firstLogin = false
-        } else {
-            setMediaIcons()
+        if(AWSIdentityManager.defaultIdentityManager().isLoggedIn) {
+            handleMediaIcons()
         }
         print ("viewdid appear")
         previewLayer?.frame = cameraView.bounds
@@ -110,6 +106,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     func handleShareMedia(direction:String!) {
         if firstLogin == true {
             shareDefault(direction: direction)
+            firstLogin = false;
         } else {
             shareWithuser(direction: direction)
         }
@@ -261,9 +258,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         self.dismiss(animated: true, completion: nil)
     }
 
-    
-
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -358,10 +352,22 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
 
     @IBAction func takePhoto(_ sender: AnyObject) {
-        if firstTime {
-            didPressTakeAnother()
-            firstTime = false
-        }
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
+            if (task.error == nil) {
+                if (task.result != nil) {
+                    let tableRow = task.result as! PictureUsUserSetting1
+                    if tableRow._downLeft == nil {
+                        self.insertSettings(leftSetting: "facebook", rightSetting: "twitter", upSetting: "weibo", downSetting: "imessage")
+                    }
+                }
+            }
+            if self.firstTime {
+                self.didPressTakeAnother()
+                self.firstTime = false
+            }
+            return nil
+        })
     }
    
     @IBAction func takeAnotherPhoto(_ sender: AnyObject) {
@@ -407,14 +413,22 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {
+                    print ("got table")
                     let tableRow = task.result as! PictureUsUserSetting1
-                    self.setImages(leftSetting: tableRow._left!, rightSetting: tableRow._right!, upSetting: tableRow._up!, downSetting: tableRow._down!)
+                    if tableRow._downLeft == nil {
+                        print ("no downleft")
+                        self.setDefaults()
+                    } else {
+                        self.setImages(leftSetting: tableRow._left!, rightSetting: tableRow._right!, upSetting: tableRow._up!, downSetting: tableRow._down!)
+                    }
                 }
             } else {
                 self.setDefaults()
             }
             return nil
         })
+        //If there wasn't a user in the first place, create a new one!
+        self.handleFirstTimeLogin()
     }
     
     func setDefaults() {
@@ -423,9 +437,11 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         downImage.image = socialMediaTypes["imessage"]
         leftImage.image = socialMediaTypes["facebook"]
         rightImage.image = socialMediaTypes["twitter"]
-        phoneNumber = ""
     }
     
+    func handleMediaIcons() {
+        setMediaIcons()
+    }
     func setImages (leftSetting: String, rightSetting: String, upSetting: String, downSetting: String) {
         print ("setting from db")
         upImage.image = socialMediaTypes[upSetting]
@@ -433,6 +449,43 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         leftImage.image = socialMediaTypes[leftSetting]
         rightImage.image = socialMediaTypes[rightSetting]
     }
+    
+    //Insert users
+    func insertSettings(leftSetting: String, rightSetting: String, upSetting: String, downSetting: String) {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let uset = PictureUsUserSetting1()
+        uset?._userId = AWSIdentityManager.defaultIdentityManager().identityId!
+        uset?._circle = "V2.0"
+        uset?._down = downSetting
+        uset?._left = leftSetting
+        uset?._right = rightSetting
+        uset?._up = upSetting
+        uset?._circle="unsetCircle"
+        uset?._doubleTap="unsetDoubleTap"
+        uset?._downLeft="unsetDownLeft"
+        uset?._downRight="unsetDownRight"
+        uset?._iMessageContacts="UnsetContacts"
+        uset?._iMessageText="unsetMessageText"
+        uset?._tap="unsetTap"
+        uset?._upLeft="unsetLeft"
+        uset?._upRight="unsetRight"
+        
+        dynamoDBObjectMapper.save(uset!, completionHandler: {(error: Error?) -> Void in
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            
+        })
+    }
+    func handleFirstTimeLogin() {
+        if FINAL_USED_TO_SEED == false {
+            FINAL_USED_TO_SEED = true
+              self.insertSettings(leftSetting: "facebook", rightSetting: "twitter", upSetting: "weibo", downSetting: "imessage")
+            setDefaults()
+        }
+    }
+
 
 }
 

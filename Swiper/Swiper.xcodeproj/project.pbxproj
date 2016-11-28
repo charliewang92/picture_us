@@ -359,6 +359,7 @@
 					};
 					2A5D53151DD920C6002C0377 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = WPS3Y6MWD7;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2A5D52F61DD920C6002C0377;
 					};
@@ -695,6 +696,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = WPS3Y6MWD7;
 				INFOPLIST_FILE = SwiperUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.SwiperUITests;
@@ -708,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = WPS3Y6MWD7;
 				INFOPLIST_FILE = SwiperUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.SwiperUITests;
