@@ -20,6 +20,10 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     var previewLayer : AVCaptureVideoPreviewLayer?
     var firstTime: Bool = true
     var saveToGallery: Bool = true
+    var appliedFilter: Bool = false
+    var setSepia: Bool = false
+    var setTempImage: Bool = false
+    var tmpUIImage: UIImage!
     @IBOutlet var cameraView: UIView!
     @IBOutlet var pictureImage: UIImageView!
     var phoneNumber: String!
@@ -28,6 +32,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var swipeUpImg: UIImageView!
     @IBOutlet var swipeDownImg: UIImageView!
     
+    @IBOutlet var applyFilterButton: UIButton!
     @IBOutlet var takeAnotherPhotoButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
     @IBOutlet var imagePickerButton: UIButton!
@@ -313,8 +318,12 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                     }
                     self.pictureImage.image = image
+                    self.appliedFilter = false
+                    self.setSepia = false;
+                    self.setTempImage = false
                     self.imagePickerButton.setImage(image, for: UIControlState.normal)
                     self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
+                    self.view.bringSubview(toFront: self.applyFilterButton)
                     self.view.bringSubview(toFront: self.swipeLeftImg)
                     self.view.bringSubview(toFront: self.swipeRightImg)
                     self.view.bringSubview(toFront: self.swipeUpImg)
@@ -339,6 +348,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
             self.view.sendSubview(toBack: swipeUpImg)
             self.view.sendSubview(toBack: swipeDownImg)
             self.view.sendSubview(toBack: takeAnotherPhotoButton)
+            self.view.sendSubview(toBack: applyFilterButton)
             self.view.bringSubview(toFront: imagePickerButton)
             self.view.sendSubview(toBack: leftImage)
             self.view.sendSubview(toBack: rightImage)
@@ -448,8 +458,12 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         captureSession?.stopRunning()
         pictureImage.contentMode = .scaleAspectFill
         pictureImage.image = chosenImage
+        appliedFilter = false
+        setSepia = false
+        setTempImage = false
         self.view.bringSubview(toFront: self.pictureImage)
         self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
+        self.view.bringSubview(toFront: self.applyFilterButton)
         self.view.bringSubview(toFront: self.swipeLeftImg)
         self.view.bringSubview(toFront: self.swipeRightImg)
         self.view.bringSubview(toFront: self.swipeUpImg)
@@ -462,6 +476,47 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         didTakePhoto = true
         dismiss(animated:true, completion: nil)
     }
+    
+    @IBAction func applyFilterToImage(_ sender: Any) {
+        if setTempImage == false {
+            tmpUIImage = self.pictureImage.image
+            setTempImage = true
+        }
+        if appliedFilter == false {
+            var filterName = "CIFalseColor"
+            guard let image = self.tmpUIImage.cgImage else {
+                let alert = UIAlertController(title: "Swiper", message: "Could not apply filter.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            let openGLContext = EAGLContext(api: .openGLES3)
+            let context = CIContext(eaglContext: openGLContext!)
+            let ciImage = CIImage(cgImage: image)
+            if setSepia == true {
+                filterName = "CIPhotoEffectNoir"
+                appliedFilter = true
+            } else {
+                setSepia = true
+                filterName = "CIFalseColor"
+            }
+            let filter = CIFilter(name: filterName) // CISepiaTone
+            filter?.setValue(ciImage, forKey: kCIInputImageKey)
+            
+            if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
+                self.pictureImage?.image = UIImage(cgImage: context.createCGImage(output, from: output.extent)!, scale: 1.0, orientation: UIImageOrientation.right)
+                
+            }
+        } else {
+            self.pictureImage?.image = tmpUIImage
+            appliedFilter = false
+            setTempImage = false
+            setSepia = false
+        }
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
