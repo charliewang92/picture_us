@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Launches the sign in URLs to Google for now and will integrate Facebook later
      **/
     func application(_ application: UIApplication, openURL url: URL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        // print("application application: \(application.description), openURL: \(url.absoluteURL), sourceApplication: \(sourceApplication)")
         return AWSMobileClient.sharedInstance.withApplication(application: application, withURL: url as NSURL, withSourceApplication: sourceApplication, withAnnotation: annotation)
     }
     

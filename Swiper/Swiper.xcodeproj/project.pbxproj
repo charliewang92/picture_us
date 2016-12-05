@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A51A2341DF3A45C00FA81B5 /* SettingDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51A2331DF3A45C00FA81B5 /* SettingDetailController.swift */; };
 		2A5D52FB1DD920C6002C0377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D52FA1DD920C6002C0377 /* AppDelegate.swift */; };
 		2A5D52FD1DD920C6002C0377 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D52FC1DD920C6002C0377 /* MasterController.swift */; };
 		2A5D53001DD920C6002C0377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5D52FE1DD920C6002C0377 /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A51A2331DF3A45C00FA81B5 /* SettingDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDetailController.swift; sourceTree = "<group>"; };
 		2A5D52F71DD920C6002C0377 /* Swiper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5D52FA1DD920C6002C0377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A5D52FC1DD920C6002C0377 /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				2A5D52FA1DD920C6002C0377 /* AppDelegate.swift */,
 				2A5D52FC1DD920C6002C0377 /* MasterController.swift */,
 				2A5D53281DD92473002C0377 /* SettingController.swift */,
+				2A51A2331DF3A45C00FA81B5 /* SettingDetailController.swift */,
 				2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */,
 				CB83153D1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift */,
 				2A8C36851DDFBF5900D759BD /* CameraController.swift */,
@@ -445,6 +448,7 @@
 				CB83153E1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift in Sources */,
 				CBABA3C11DE80834007752EC /* LogoutViewController.swift in Sources */,
 				2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */,
+				2A51A2341DF3A45C00FA81B5 /* SettingDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +622,7 @@
 					"-force_load",
 					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKCoreKit.framework/FBSDKCoreKit",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
+				PRODUCT_BUNDLE_IDENTIFIER = CharlieWang.PictureUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -650,7 +654,7 @@
 					"-force_load",
 					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKCoreKit.framework/FBSDKCoreKit",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
+				PRODUCT_BUNDLE_IDENTIFIER = CharlieWang.PictureUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

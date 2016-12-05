@@ -13,12 +13,13 @@ import AVFoundation
 import AWSDynamoDB
 import AWSMobileHubHelper
 
-
+//Need to change where the default keeps getting set...
 class CameraController:UIViewController, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var stillImageOutput : AVCaptureStillImageOutput?
     var captureSession : AVCaptureSession?
     var previewLayer : AVCaptureVideoPreviewLayer?
     var firstTime: Bool = true
+    var saveToGallery: Bool = true
     @IBOutlet var cameraView: UIView!
     @IBOutlet var pictureImage: UIImageView!
     var phoneNumber: String!
@@ -31,28 +32,38 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var settingsButton: UIButton!
     @IBOutlet var imagePickerButton: UIButton!
     let imagePicker = UIImagePickerController()
+    var didTakePhoto = Bool()
     
     @IBOutlet var leftImage: UIImageView!
     @IBOutlet var rightImage: UIImageView!
     @IBOutlet var upImage: UIImageView!
     @IBOutlet var downImage: UIImageView!
-    //Global var to bypass the initial google signin
-    var FINAL_USED_TO_SEED = false
-    var firstLogin = true
-
+    
     let socialMediaTypes = [
-        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
+        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon"), "deviantart":#imageLiteral(resourceName: "deviantart")
     ]
-    var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon")]
+    var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon"), #imageLiteral(resourceName: "deviantart")]
     
     let buttonToSocialMedia = [
-        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo"]
+        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo", 8:"deviantart"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assignSwipeAction()
         imagePicker.delegate = self
         phoneNumber = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setup()
+        previewLayer?.frame = cameraView.bounds
+    }
+
+    func setup() {
+        if(AWSIdentityManager.defaultIdentityManager().isLoggedIn) {
+            setMediaIcons()
+        }
     }
     
     func assignSwipeAction() {
@@ -72,20 +83,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         rightRecognizer.direction = UISwipeGestureRecognizerDirection.right
         self.view?.addGestureRecognizer(rightRecognizer)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if(AWSIdentityManager.defaultIdentityManager().isLoggedIn) {
-            handleMediaIcons()
-        }
-        print ("viewdid appear")
-        previewLayer?.frame = cameraView.bounds
-    }
     
     func handleRight() {
         handleShareMedia(direction:"right")
@@ -104,11 +101,10 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
     
     func handleShareMedia(direction:String!) {
-        if firstLogin == true {
-            shareDefault(direction: direction)
-            firstLogin = false;
-        } else {
+        if(AWSIdentityManager.defaultIdentityManager().isLoggedIn) {
             shareWithuser(direction: direction)
+        } else {
+            shareDefault(direction: direction)
         }
     }
     
@@ -143,14 +139,14 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                     }
                 }
             } else {
-               print ("did not get the direction")
-            }
+                let alert = UIAlertController(title: "Swiper", message: "We did not get the direction you swiped!", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)            }
             return nil
         })
     }
     
     func shareWithSocialMedia(socialMedia:String!) {
-        print (socialMedia)
         if socialMedia == "imessage" {
             sendImageMessage()
         } else if socialMedia == "facebook" {
@@ -166,8 +162,9 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         }else if socialMedia == "tumblr" {
             shareImageWithTumblr()
         }else if socialMedia == "linkedin" {
-            print ("in linkedin!")
             shareImageWithLinkedIn()
+        }else if socialMedia == "deviantart" {
+            shareImageWithDeviantart()
         }else {
             let alert = UIAlertController(title: "Swiper", message: "We do not have that social media yet", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -236,6 +233,12 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
             self.present(alert, animated: true, completion: nil)
     }
     
+    func shareImageWithDeviantart() {
+        let alert = UIAlertController(title: "Devianart", message: "Devianart integration soon to come!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     /**
      sharing image with weibo
@@ -276,7 +279,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         }
         
         if (error == nil && captureSession?.canAddInput(input) != nil){
-            
             captureSession?.addInput(input)
             
             stillImageOutput = AVCaptureStillImageOutput()
@@ -290,7 +292,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                 previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
                 cameraView.layer.addSublayer(previewLayer!)
                 captureSession?.startRunning()
-                
             }
         }
     }
@@ -308,27 +309,27 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                     let dataProvider  = CGDataProvider(data: imageData as! CFData)
                     let cgImageRef = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent )
                     let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.right)
-                    
+                    if (self.saveToGallery == true) {
+                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+                    }
                     self.pictureImage.image = image
+                    self.imagePickerButton.setImage(image, for: UIControlState.normal)
                     self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
                     self.view.bringSubview(toFront: self.swipeLeftImg)
                     self.view.bringSubview(toFront: self.swipeRightImg)
-                     self.view.bringSubview(toFront: self.swipeUpImg)
-                     self.view.bringSubview(toFront: self.swipeDownImg)
+                    self.view.bringSubview(toFront: self.swipeUpImg)
+                    self.view.bringSubview(toFront: self.swipeDownImg)
                     self.view.bringSubview(toFront: self.rightImage)
-                     self.view.bringSubview(toFront: self.leftImage)
-                     self.view.bringSubview(toFront: self.upImage)
-                     self.view.bringSubview(toFront: self.downImage)
+                    self.view.bringSubview(toFront: self.leftImage)
+                    self.view.bringSubview(toFront: self.upImage)
+                    self.view.bringSubview(toFront: self.downImage)
                     self.view.sendSubview(toBack: self.imagePickerButton)
-                    
-                
                 }
             })
         }
         self.view.bringSubview(toFront: pictureImage)
     }
     
-    var didTakePhoto = Bool()
     func didPressTakeAnother(){
         if didTakePhoto == true{
             didTakePhoto = false
@@ -352,22 +353,10 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
 
     @IBAction func takePhoto(_ sender: AnyObject) {
-        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-        dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
-            if (task.error == nil) {
-                if (task.result != nil) {
-                    let tableRow = task.result as! PictureUsUserSetting1
-                    if tableRow._downLeft == nil {
-                        self.insertSettings(leftSetting: "facebook", rightSetting: "twitter", upSetting: "weibo", downSetting: "imessage")
-                    }
-                }
-            }
-            if self.firstTime {
-                self.didPressTakeAnother()
-                self.firstTime = false
-            }
-            return nil
-        })
+        if self.firstTime {
+            self.didPressTakeAnother()
+            self.firstTime = false
+        }
     }
    
     @IBAction func takeAnotherPhoto(_ sender: AnyObject) {
@@ -378,72 +367,45 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     
     
     @IBAction func pickImageFromLibrary(_ sender: AnyObject) {
-//        imagePicker.allowsEditing = false
-//        imagePicker.sourceType = .photoLibrary
-//        
-//        present(imagePicker, animated: true, completion: nil)
-        let alert = UIAlertController(title: "Image Picker", message: "Image Picker feature coming soon!", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+                present(imagePicker, animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            pictureImage.contentMode = .scaleAspectFit
-//            pictureImage.image = pickedImage
-//            self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
-//            self.view.bringSubview(toFront: self.swipeLeftImg)
-//            self.view.bringSubview(toFront: self.swipeRightImg)
-//            self.view.bringSubview(toFront: self.swipeUpImg)
-//            self.view.bringSubview(toFront: self.swipeDownImg)
-//            self.view.sendSubview(toBack: self.imagePickerButton)
-//            
-//        }
-        
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
+
     func setMediaIcons() {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {
-                    print ("got table")
                     let tableRow = task.result as! PictureUsUserSetting1
-                    if tableRow._downLeft == nil {
-                        print ("no downleft")
-                        self.setDefaults()
-                    } else {
                         self.setImages(leftSetting: tableRow._left!, rightSetting: tableRow._right!, upSetting: tableRow._up!, downSetting: tableRow._down!)
-                    }
+                } else {
+                    //If no users yet, this will return null and we will insert a new user
+                    self.insertSettings(leftSetting: "facebook", rightSetting: "twitter", upSetting: "weibo", downSetting: "imessage")
+                    self.setDefaultImages()
                 }
             } else {
-                self.setDefaults()
+                let alert = UIAlertController(title: "Swiper", message: "Login encountered an error!", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             return nil
         })
-        //If there wasn't a user in the first place, create a new one!
-        self.handleFirstTimeLogin()
     }
     
-    func setDefaults() {
-        print ("setting defaults")
+    func setDefaultImages() {
         upImage.image = socialMediaTypes["weibo"]
         downImage.image = socialMediaTypes["imessage"]
         leftImage.image = socialMediaTypes["facebook"]
         rightImage.image = socialMediaTypes["twitter"]
     }
     
-    func handleMediaIcons() {
-        setMediaIcons()
-    }
     func setImages (leftSetting: String, rightSetting: String, upSetting: String, downSetting: String) {
-        print ("setting from db")
         upImage.image = socialMediaTypes[upSetting]
         downImage.image = socialMediaTypes[downSetting]
         leftImage.image = socialMediaTypes[leftSetting]
@@ -478,12 +440,32 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
             
         })
     }
-    func handleFirstTimeLogin() {
-        if FINAL_USED_TO_SEED == false {
-            FINAL_USED_TO_SEED = true
-              self.insertSettings(leftSetting: "facebook", rightSetting: "twitter", upSetting: "weibo", downSetting: "imessage")
-            setDefaults()
-        }
+
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        captureSession?.stopRunning()
+        pictureImage.contentMode = .scaleAspectFill
+        pictureImage.image = chosenImage
+        self.view.bringSubview(toFront: self.pictureImage)
+        self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
+        self.view.bringSubview(toFront: self.swipeLeftImg)
+        self.view.bringSubview(toFront: self.swipeRightImg)
+        self.view.bringSubview(toFront: self.swipeUpImg)
+        self.view.bringSubview(toFront: self.swipeDownImg)
+        self.view.bringSubview(toFront: self.rightImage)
+        self.view.bringSubview(toFront: self.leftImage)
+        self.view.bringSubview(toFront: self.upImage)
+        self.view.bringSubview(toFront: self.downImage)
+        self.view.sendSubview(toBack: self.imagePickerButton)
+        didTakePhoto = true
+        dismiss(animated:true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 

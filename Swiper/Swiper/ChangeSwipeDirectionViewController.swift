@@ -17,12 +17,12 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
     var thumbButt: UIButton?
     var passedDirection: String! = ""
     let socialMediaTypes = [
-        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
+        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "deviantart": #imageLiteral(resourceName: "deviantart"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
     ]
-     var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon")]
+     var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon"),#imageLiteral(resourceName: "deviantart")]
     
      let buttonToSocialMedia = [
-        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo"]
+        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo", 8:"deviantart"]
     
     @IBOutlet var currentMedia: UIImageView!
     override func viewDidLoad() {
@@ -38,12 +38,12 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
     }
     
     func buttonAction(_ sender: UIButton!) {
-        print ("sender tag")
-        var socialMedia = buttonToSocialMedia[sender.tag]
-        print (socialMedia)
+        let socialMedia = buttonToSocialMedia[sender.tag]
         currentMedia.image = socialMediaTypes[socialMedia!]
         updateNewSetting(newDirection: passedDirection, newMedia: socialMedia!)
-        
+        let alert = UIAlertController(title: "Swiper", message: "Updated social media " + socialMedia! + " for direction " + passedDirection, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateNewSetting(newDirection: String, newMedia: String) {
@@ -52,7 +52,6 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {
-                    print ("new table row")
                     let tableRow = task.result as! PictureUsUserSetting1
                     uset = tableRow
                     if newDirection == "up" {
@@ -71,10 +70,11 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
                         }
                         
                     })
-                    print ("saved")
                 }
             } else {
-                print ("Could not update")
+                let alert = UIAlertController(title: "Swiper", message: "Unable to update settings, please restart app and try again.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             return nil
         })
@@ -93,7 +93,6 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
         let numberOfButtons = socialMedia.count
         
         for index in 0...numberOfButtons - 1 {
-            print (index)
             let buttonTag = index
             let buttonImage:UIImage = socialMedia[index]
             let button = UIButton(type: UIButtonType.custom) as UIButton
@@ -101,23 +100,20 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
             button.frame = CGRect(origin: CGPoint(x: x,y :y), size: CGSize(width: buttonWidth, height: buttonHeight))
             button.setImage(buttonImage, for: .normal)
             button.showsTouchWhenHighlighted = true
-            
+
             button.addTarget(self, action: Selector("buttonAction:"), for: UIControlEvents.touchUpInside)
-            
             x +=  buttonWidth + buttonGap
             socialMediaScrollView.addSubview(button)
         }
         
         
         let buttonsCountFloat = CGFloat(Int(numberOfButtons))
-        var x_val = buttonWidth * CGFloat(buttonsCountFloat+4)
-        
+        let x_val = buttonWidth * CGFloat(buttonsCountFloat+4)
         socialMediaScrollView.contentSize = CGSize(width: x_val, height: y)
     }
     
     func setCurrentMedia(socialMedia:String) {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-        
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {

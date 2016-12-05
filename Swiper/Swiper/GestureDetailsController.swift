@@ -19,15 +19,12 @@ class GestureDetailsController: UITableViewController {
     var results: PictureUsUserSetting1!
     
     let socialMediaTypes = [
-        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
+        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon"), "deviantart":#imageLiteral(resourceName: "deviantart")
     ]
-    var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon")]
+    var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon"),#imageLiteral(resourceName: "deviantart")]
     
     let buttonToSocialMedia = [
-        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo"]
-    
-
-    
+        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo", 8:"devianart"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +34,6 @@ class GestureDetailsController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setMediaIcons()
-        print ("gestureDetails did appear")        
     }
     
     @IBOutlet var upTableCell: UITableViewCell!
@@ -54,9 +50,7 @@ class GestureDetailsController: UITableViewController {
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {
-                    print ("new table row")
                     let tableRow = task.result as! PictureUsUserSetting1
-                    print(tableRow)
                     if (tableRow._downLeft == nil) {
                         self.setDefaults()
                     } else {
@@ -101,17 +95,14 @@ class GestureDetailsController: UITableViewController {
     }
     
     func setDefaults() {
-        print ("setting defaults")
         upImage.image = socialMediaTypes["weibo"]
         downImage.image = socialMediaTypes["imessage"]
         leftImage.image = socialMediaTypes["facebook"]
         rightImage.image = socialMediaTypes["twitter"]
         insertSettings(leftSetting: "facebook", rightSetting: "twitter", upSetting: "weibo", downSetting: "imessage")
-        print("setting defaults")
     }
     
     func setImages (leftSetting: String, rightSetting: String, upSetting: String, downSetting: String) {
-        print ("setting from db")
         upImage.image = socialMediaTypes[upSetting]
         downImage.image = socialMediaTypes[downSetting]
         leftImage.image = socialMediaTypes[leftSetting]
@@ -119,7 +110,6 @@ class GestureDetailsController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print ("preparing for segue")
         let nextVC: ChangeSwipeDirectionViewController = segue.destination as! ChangeSwipeDirectionViewController
         if (segue.identifier == "swipeUpSegue") {
             nextVC.passedDirection = "up"

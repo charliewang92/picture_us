@@ -59,4 +59,6 @@ class PictureUsUserSetting1: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             "_upRight" as NSObject : "UpRight" as AnyObject,
         ]
     }
+    
+    
 }
